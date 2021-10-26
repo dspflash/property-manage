@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDVproperty_belongingslst" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="property_belongingslst_vLst" ToolTip="ttp_property_belongingslst_v" Size="700,450" OnLoad="init" Heading="id_belongings,120;dt,150;outin,120;responsible,120;price,90;cnts,55;amount,90;remark,150;stat,60;id_corp,55;enteredby,55;dt_enter,150;id_belonginglst,55;" loadedclick="0">
+	<DbDetails >
+<Index>id_belonginglst</Index>
+<DbTable>mylayout.property_belongingslst p left join mylayout.property_belongingstp p0 on p.id_belongings=p0.id_belongingtp left join mylayout.userlogin u on p.responsible=u.user_code</DbTable>
+<Data>p0.name_belongingtp id_belongings,p.dt,p.outin,u.user_name responsible,p.price,p.cnts,p.amount,p.remark,p.stat,p.id_corp,p.enteredby,p.dt_enter,p.id_belonginglst</Data>
+<Order>id_belonginglst</Order></DbDetails>
+<DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>id_belonginglst='%{property_belongingslst_vLst[id_belonginglst]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.property_belongingslst.property_belongingslstLst"/><assign name="$this.property_belongingslst.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_belongingslst</DbTable>
+<Where>id_belonginglst='%{property_belongingslst_vLst[id_belonginglst]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_property_belongingslst" expr="js(%{property_belongingslst_vLst[currentpage]}+1)"/>
+<assign name="pgscb_property_belongingslst" expr="js(%{property_belongingslst_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

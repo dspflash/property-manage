@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproperty_chargerule" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="property_chargeruleLst" ToolTip="ttp_property_chargerule" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id_rule</Index>
+<DbTable>mylayout.property_chargerule</DbTable>
+<Data>name_rule,formula,stat,id_rule</Data>
+<Order>id_rule</Order></DbDetails>
+<OnClick>
+<if cond="%{id_rule}"><SetVisible name="insertproperty_chargerule" Visible="0"/><SetVisible name="modifyproperty_chargerule" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

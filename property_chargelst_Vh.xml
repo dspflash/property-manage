@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproperty_chargelst" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="property_chargelstLst" ToolTip="ttp_property_chargelst" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id_chargelst</Index>
+<DbTable>mylayout.property_chargelst</DbTable>
+<Data>id_comm,id_build,id_room,chargetype,price,num,year,month,chargename,chargerule,meterlast,metercur,amount,dt_pay,id_payment,id_accountant,yy_sxid,enteredby,stat,id_chargelst</Data>
+<Order>id_chargelst</Order></DbDetails>
+<OnClick><assign name="id_comm[id_comm]" expr="%{property_chargelstLst[id_comm]}" function="SetSel"/><assign name="id_build[id_build]" expr="%{property_chargelstLst[id_build]}" function="SetSel"/><assign name="id_room[id_room]" expr="%{property_chargelstLst[id_room]}" function="SetSel"/><assign name="chargetype[id_charge]" expr="%{property_chargelstLst[chargetype]}" function="SetSel"/><assign name="chargerule[id_rule]" expr="%{property_chargelstLst[chargerule]}" function="SetSel"/>
+<if cond="%{id_chargelst}"><SetVisible name="insertproperty_chargelst" Visible="0"/><SetVisible name="modifyproperty_chargelst" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

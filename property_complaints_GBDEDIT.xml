@@ -1,0 +1,115 @@
+﻿<GroupBox Name="GBDEDITproperty_complaints"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_id_comm"><Ctrls>
+<Label Align="Right" Text="id_comm" onload="init" Name="lb_id_comm" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_id_comm" onload="init" Name="id_comm" Size="170,100">
+	<DbDetails>
+<Index>id_comm</Index>
+<DbTable>mylayout.property_community</DbTable>
+<Data>name_comm,id_comm</Data>
+<Where/>
+<queryFormat/></DbDetails><OnSELENDOK><if cond="%{id_comm[id_comm]}"><submit next="id_build"/><else/><submit next="id_build" function="resetcontent"/><submit next="id_room" function="resetcontent"/></if></OnSELENDOK></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_id_build"><Ctrls>
+<Label Align="Right" Text="id_build" Name="lb_id_build" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_id_build" Name="id_build" Size="170,100">
+	<DbDetails>
+<Index>id_build</Index>
+<DbTable>mylayout.property_building</DbTable>
+<Data>name_build,id_build</Data>
+<Where>id_comm='%{id_comm[id_comm]}'</Where>
+<queryFormat/></DbDetails><OnSELENDOK><if cond="%{id_build[id_build]}"><submit next="id_room"/><else/><submit next="id_room" function="resetcontent"/></if></OnSELENDOK></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_id_room"><Ctrls>
+<Label Align="Right" Text="id_room" Name="lb_id_room" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_id_room" Name="id_room" Size="170,100">
+	<DbDetails>
+<Index>id_room</Index>
+<DbTable>mylayout.property_room</DbTable>
+<Data>name_room,owner,ownerphone,id_room</Data>
+<Where>id_comm='%{id_comm[id_comm]}' and id_build='%{id_build[id_build]}'</Where>
+<queryFormat/></DbDetails><OnSelEndOk><if cond="!'%{complainer}'"><assign name="complainer" expr="%{id_room[owner]}"/></if><if cond="!'%{phone}'"><assign name="phone" expr="%{id_room[ownerphone]}"/></if></OnSelEndOk></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_complaintp"><Ctrls>
+<Label Align="Right" Text="complaintp" onload="init" Name="lb_complaintp" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_complaintp" onload="init" Name="complaintp" Size="170,100">
+	<DbDetails>
+<Index>idx</Index>
+<DbTable>mylayout.property_complainttp</DbTable>
+<Data>name,idx</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_stat4dealwith" Visible="false"><Ctrls>
+<Label Align="Right" Text="stat4dealwith" overlap="pre" Name="lb_stat4dealwith" readonly="true" Size="60,20" Visible="false"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_stat4dealwith" overlap="pre" Name="stat4dealwith" readonly="true" Size="170,100" Visible="false">
+	<DbDetails>
+<Index>status_id</Index>
+<DbTable>mylayout.statusinfo</DbTable>
+<Data>description,status_id</Data>
+<Where>status_type='complaint'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_complainer"><Ctrls>
+<Label Align="Right" Text="complainer" Name="lb_complainer" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_complainer" Name="complainer" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_phone"><Ctrls>
+<Label Align="Right" Text="phone" Name="lb_phone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_phone" Name="phone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialphone" OnClick="nis3ucs:%{phone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_remark" Name="remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dealwithinfo" Visible="false"><Ctrls>
+<Label Align="Right" Text="dealwithinfo" overlap="pre" Name="lb_dealwithinfo" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_dealwithinfo" overlap="pre" Name="dealwithinfo" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_interview" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_interview" overlap="pre" Name="lb_dt_interview" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_interview" overlap="pre" Name="dt_interview" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_interviewer" Visible="false"><Ctrls>
+<Label Align="Right" Text="interviewer" overlap="pre" Name="lb_interviewer" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_interviewer" overlap="pre" Name="interviewer" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_interviewinfo" Visible="false"><Ctrls>
+<Label Align="Right" Text="interviewinfo" overlap="pre" Name="lb_interviewinfo" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_interviewinfo" overlap="pre" Name="interviewinfo" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_acceptance"><Ctrls>
+<Label Align="Right" Text="acceptance" Name="lb_acceptance" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_acceptance" Name="acceptance" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_satisfaction" Visible="false"><Ctrls>
+<Label Align="Right" Text="satisfaction" overlap="pre" Name="lb_satisfaction" readonly="true" Size="60,20" Visible="false"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_satisfaction" overlap="pre" Name="satisfaction" readonly="true" Size="170,100" Visible="false">
+	<DbDetails>
+<Index>id_satisfaction</Index>
+<DbTable>mylayout.satisfaction</DbTable>
+<Data>satisfaction,id_satisfaction</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_interviewby" Visible="false"><Ctrls>
+<Label Align="Right" Text="interviewby" overlap="pre" Name="lb_interviewby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_interviewby" overlap="pre" Name="interviewby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_complaint" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_complaint" overlap="pre" Name="lb_dt_complaint" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_complaint" overlap="pre" Name="dt_complaint" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_dealwith" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_dealwith" overlap="pre" Name="lb_dt_dealwith" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_dealwith" overlap="pre" Name="dt_dealwith" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_staff2dealwith" Visible="false"><Ctrls>
+<Label Align="Right" Text="staff2dealwith" overlap="pre" Name="lb_staff2dealwith" readonly="true" Size="60,20" Visible="false"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_staff2dealwith" overlap="pre" Name="staff2dealwith" readonly="true" Size="170,100" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_complaints" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_complaints" overlap="pre" Name="lb_id_complaints" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_complaints" overlap="pre" Name="id_complaints" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id_complaints}'"><SetVisible name="insertproperty_complaints" Visible="0"/><SetVisible name="modifyproperty_complaints" Visible="1"/><else/><SetVisible name="insertproperty_complaints" Visible="1"/><SetVisible name="modifyproperty_complaints" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

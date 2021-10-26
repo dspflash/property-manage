@@ -1,0 +1,20 @@
+﻿<WndTap Name="addressinfo_v" Text="addressinfo">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="addressinfo_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><addressname format="(a.addressname like '%%{opvalue}%')"/><addr format="(a.addr like '%%{opvalue}%')"/><county format="(a.county like '%%{opvalue}%')"/><city format="(a.city like '%%{opvalue}%')"/><province format="(a.province like '%%{opvalue}%')"/><nation format="(a.nation like '%%{opvalue}%')"/><contact format="(a.contact like '%%{opvalue}%')"/><telphone format="(a.telphone like '%%{opvalue}%')"/><postal_code format="(a.postal_code like '%%{opvalue}%')"/><address format="(a.address like '%%{opvalue}%')"/><address_distance format="(a.address_distance like '%%{opvalue}%')"/><address_position format="(a.address_position like '%%{opvalue}%')"/><poi format="(a.poi like '%%{opvalue}%')"/><poi_distance format="(a.poi_distance like '%%{opvalue}%')"/><poi_position format="(a.poi_position like '%%{opvalue}%')"/><landmark format="(a.landmark like '%%{opvalue}%')"/><landmark_distance format="(a.landmark_distance like '%%{opvalue}%')"/><landmark_position format="(a.landmark_position like '%%{opvalue}%')"/><road format="(a.road like '%%{opvalue}%')"/><road_distance format="(a.road_distance like '%%{opvalue}%')"/><county_code format="(a.county_code like '%%{opvalue}%')"/><created_by format="(a.created_by like '%%{opvalue}%')"/><creation_date format="(a.creation_date between '%{creation_date[datetime]}' and '%{creation_date[datetime2]}')"/><last_update_by format="(a.last_update_by like '%%{opvalue}%')"/><last_update_date format="(a.last_update_date between '%{last_update_date[datetime]}' and '%{last_update_date[datetime2]}')"/><addressinfoid format="(a.addressinfoid like '%%{opvalue}%')"/><addrlng format="(a.addrlng like '%%{opvalue}%')"/><addrlat format="(a.addrlat like '%%{opvalue}%')"/><city_code format="(a.city_code like '%%{opvalue}%')"/><province_code format="(a.province_code like '%%{opvalue}%')"/><active format="a.active is %{opvalue}"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\addressinfo.xml"/>
+<Ctrls><GroupBox  Name="GBaddressinfo" id="addressinfo" Text="addressinfo" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="addressinfo_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVaddressinfo" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.addressinfo.GBDEDITaddressinfo" function="reset"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetaddressinfo" Name="resetaddressinfo" Size="50,20">	<OnClick>	<submit next="GBDEDITaddressinfo" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="gsearch" ToolTip="ttp_gsearchaddressinfo" Name="gsearchaddressinfo" Size="50,20">	<OnClick>	
+<search next="addressinfo_vLst" listed="0" prefixwhere="1" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITaddressinfo" namelist="search" function="search"/>	
+<search next="records_addressinfo" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITaddressinfo" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="addressinfo_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="addressinfo_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="addressinfo_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

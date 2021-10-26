@@ -1,0 +1,47 @@
+﻿<GroupBox Name="GBDEDITproperty_shifts"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_shiftitem"><Ctrls>
+<Label Align="Right" Text="shiftitem" Name="lb_shiftitem" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_shiftitem" Name="shiftitem" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_staffs"><Ctrls>
+<Label Align="Right" Text="staffs" Name="lb_staffs" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_staffs" Name="staffs" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_id_comm"><Ctrls>
+<Label Align="Right" Text="id_comm" onload="init" Name="lb_id_comm" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_id_comm" onload="init" Name="id_comm" Size="170,100">
+	<DbDetails>
+<Index>id_comm</Index>
+<DbTable>mylayout.property_community</DbTable>
+<Data>name_comm,id_comm</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_dt"><Ctrls>
+<Label Align="Right" Text="dt" Name="lb_dt" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt" Name="dt" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_shiftype"><Ctrls>
+<Label Align="Right" Text="shiftype" Name="lb_shiftype" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_shiftype" Name="shiftype" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_remark" Name="remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_stat" Visible="false"><Ctrls>
+<CheckBox Text="stat" ToolTip="ttp_stat" overlap="pre" Name="stat" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_enteredby" Visible="false"><Ctrls>
+<Label Align="Right" Text="enteredby" overlap="pre" Name="lb_enteredby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_enteredby" overlap="pre" Name="enteredby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_enter" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_enter" overlap="pre" Name="lb_dt_enter" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_enter" overlap="pre" Name="dt_enter" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_shifts" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_shifts" overlap="pre" Name="lb_id_shifts" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_shifts" overlap="pre" Name="id_shifts" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id_shifts}'"><SetVisible name="insertproperty_shifts" Visible="0"/><SetVisible name="modifyproperty_shifts" Visible="1"/><else/><SetVisible name="insertproperty_shifts" Visible="1"/><SetVisible name="modifyproperty_shifts" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

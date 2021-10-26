@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVproperty_building" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteproperty_building" Name="deleteproperty_building" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mylayout.property_building</DbTable>
+<Where>id_build='%{property_buildingLst[id_build]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchproperty_building" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshproperty_building" Name="searchproperty_building" Size="50,20">
+			  <OnClick><submit next="property_buildingLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPproperty_buildingLst" OnClick="(property_buildingLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREproperty_buildingLst" OnClick="(property_buildingLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPproperty_buildingLst" OnClick="(property_buildingLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

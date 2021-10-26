@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><WndTap Text="property_room" Name="property_room" Ver="2">
+<var name="refreshAfterEdit" expr="1"/>
+<var name="dataRequired" expr="name_room,layers,roomtp[idx],owner,ownerphone,owneridcard,area_ct,area_real,id_comm,id_build"/>
+<var name="dataRequireless" expr=""/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\property_room.xml"/>
+<Ctrls>
+<GroupBox Text="property_room" Name="GBproperty_room" id="property_room" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_room_GBDEDIT.xml"></xi:include><BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_room_GBOPE.xml"></xi:include>
+<TAB/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_room_GBOPV.xml"></xi:include>
+<BR/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_room_GBDV.xml"></xi:include></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

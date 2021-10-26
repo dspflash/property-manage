@@ -1,0 +1,40 @@
+﻿<Language name="property_shifts">
+<Lang name="property_shifts" value="班组"/>
+<Lang name="TabEditproperty_shifts" value="property_shifts Edit"/>
+<Lang name="TabViewproperty_shifts" value="property_shifts View"/>
+<Lang name="shiftitem" value=""/>
+<Lang name="ttp_shiftitem" value=""/>
+<Lang name="staffs" value=""/>
+<Lang name="ttp_staffs" value=""/>
+<Lang name="id_comm" value=""/>
+<Lang name="ttp_id_comm" value=""/>
+<Lang name="dt" value=""/>
+<Lang name="ttp_dt" value=""/>
+<Lang name="shiftype" value=""/>
+<Lang name="ttp_shiftype" value=""/>
+<Lang name="remark" value=""/>
+<Lang name="ttp_remark" value=""/>
+<Lang name="stat" value=""/>
+<Lang name="ttp_stat" value=""/>
+<Lang name="enteredby" value=""/>
+<Lang name="ttp_enteredby" value=""/>
+<Lang name="dt_enter" value=""/>
+<Lang name="ttp_dt_enter" value=""/>
+<Lang name="id_shifts" value=""/>
+<Lang name="ttp_id_shifts" value=""/>
+<Lang name="ttp_operationproperty_shifts" value=""/>
+<Lang name="ttp_createproperty_shifts" value=""/>
+<Lang name="ttp_modifyproperty_shifts" value=""/>
+<Lang name="ttp_resetproperty_shifts" value=""/>
+<Lang name="ttp_deleteproperty_shifts" value=""/>
+<Lang name="ttp_refreshproperty_shifts" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

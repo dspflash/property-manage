@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproperty_building" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="property_buildingLst" ToolTip="ttp_property_building" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id_build</Index>
+<DbTable>mylayout.property_building</DbTable>
+<Data>code_build,name_build,dt_const,layers,rooms,residents,structure,remark,enteredby,dt_enter,dt_update,id_comm,stat,id_build</Data>
+<Order>id_build</Order></DbDetails>
+<OnClick>
+<if cond="%{id_build}"><SetVisible name="insertproperty_building" Visible="0"/><SetVisible name="modifyproperty_building" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

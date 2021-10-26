@@ -1,0 +1,46 @@
+﻿<Language name="property_belongingslst">
+<Lang name="property_belongingslst" value="财产管理"/>
+<Lang name="TabEditproperty_belongingslst" value="property_belongingslst Edit"/>
+<Lang name="TabViewproperty_belongingslst" value="property_belongingslst View"/>
+<Lang name="responsible" value="责任人员"/>
+<Lang name="ttp_responsible" value="belongings out to or in from somebody"/>
+<Lang name="id_belongings" value="财产名称"/>
+<Lang name="ttp_id_belongings" value=""/>
+<Lang name="dt" value="发生时间"/>
+<Lang name="ttp_dt" value=""/>
+<Lang name="outin" value="出入库"/>
+<Lang name="ttp_outin" value="0--out;1--in"/>
+<Lang name="price" value="参考单价"/>
+<Lang name="ttp_price" value=""/>
+<Lang name="cnts" value="数    量"/>
+<Lang name="ttp_cnts" value=""/>
+<Lang name="amount" value="金    额"/>
+<Lang name="ttp_amount" value=""/>
+<Lang name="remark" value=""/>
+<Lang name="ttp_remark" value=""/>
+<Lang name="stat" value=""/>
+<Lang name="ttp_stat" value=""/>
+<Lang name="id_corp" value=""/>
+<Lang name="ttp_id_corp" value=""/>
+<Lang name="enteredby" value=""/>
+<Lang name="ttp_enteredby" value=""/>
+<Lang name="dt_enter" value=""/>
+<Lang name="ttp_dt_enter" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationproperty_belongingslst" value=""/>
+<Lang name="ttp_createproperty_belongingslst" value=""/>
+<Lang name="ttp_modifyproperty_belongingslst" value=""/>
+<Lang name="ttp_resetproperty_belongingslst" value=""/>
+<Lang name="ttp_deleteproperty_belongingslst" value=""/>
+<Lang name="ttp_refreshproperty_belongingslst" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

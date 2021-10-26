@@ -1,0 +1,65 @@
+﻿<GroupBox Name="GBDEDITproperty_belongingslst"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_id_belongings"><Ctrls>
+<Label Align="Right" Text="id_belongings" onload="init" Name="lb_id_belongings" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_id_belongings" onload="init" Name="id_belongings" Size="170,100">
+	<DbDetails>
+<Index>id_belongingtp</Index>
+<DbTable>mylayout.property_belongingstp</DbTable>
+<Data>name_belongingtp,id_belongingtp</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt" overlap="pre" Name="lb_dt" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt" overlap="pre" Name="dt" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_outin"><Ctrls>
+<Label Align="Right" Text="outin" Name="lb_outin" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_outin" Items="出库|入库" Name="outin" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_responsible"><Ctrls>
+<Label Align="Right" Text="responsible" onload="init" Name="lb_responsible" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_responsible" onload="init" Name="responsible" Size="170,100">
+	<DbDetails>
+<Index>user_code</Index>
+<DbTable>mylayout.userlogin</DbTable>
+<Data>user_name,user_code</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_price"><Ctrls>
+<Label Align="Right" Text="price" Name="lb_price" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_price" Name="price" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_cnts"><Ctrls>
+<Label Align="Right" Text="cnts" Name="lb_cnts" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_cnts" Name="cnts" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_amount"><Ctrls>
+<Label Align="Right" Text="amount" Name="lb_amount" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_amount" Name="amount" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_remark" Name="remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_stat" Visible="false"><Ctrls>
+<CheckBox Text="stat" ToolTip="ttp_stat" overlap="pre" Name="stat" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_corp" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_corp" overlap="pre" Name="lb_id_corp" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_corp" overlap="pre" Name="id_corp" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_enteredby" Visible="false"><Ctrls>
+<Label Align="Right" Text="enteredby" overlap="pre" Name="lb_enteredby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_enteredby" overlap="pre" Name="enteredby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_enter" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_enter" overlap="pre" Name="lb_dt_enter" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_enter" overlap="pre" Name="dt_enter" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_belonginglst" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_belonginglst" overlap="pre" Name="lb_id_belonginglst" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_belonginglst" overlap="pre" Name="id_belonginglst" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id_belonginglst}'"><SetVisible name="insertproperty_belongingslst" Visible="0"/><SetVisible name="modifyproperty_belongingslst" Visible="1"/><else/><SetVisible name="insertproperty_belongingslst" Visible="1"/><SetVisible name="modifyproperty_belongingslst" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVproperty_belongingstp" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteproperty_belongingstp" Name="deleteproperty_belongingstp" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mylayout.property_belongingstp</DbTable>
+<Where>id_belongingtp='%{property_belongingstpLst[id_belongingtp]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchproperty_belongingstp" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshproperty_belongingstp" Name="searchproperty_belongingstp" Size="50,20">
+			  <OnClick><submit next="property_belongingstpLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPproperty_belongingstpLst" OnClick="(property_belongingstpLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREproperty_belongingstpLst" OnClick="(property_belongingstpLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPproperty_belongingstpLst" OnClick="(property_belongingstpLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

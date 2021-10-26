@@ -1,0 +1,11 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVproperty_payment"><Ctrls>
+<ListCtrl Heading="payer_id,55;payer,100;phone,100;prebalance,90;curbalance,90;dt_pay,150;method,120;tp,120;code,55;curaccounts,90;paidaccounts,90;yd_skr,100;enteredby,55;dt_enter,150;stat,60;remark,250;id_payment,55;" loadedclick="0" ToolTip="ttp_property_payment" Name="property_paymentLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>id_payment</Index>
+<DbTable>mylayout.property_payment p left join mylayout.property_room p0 on p.payer_id=p0.id_room left join mylayout.paymentmethod p1 on p.method=p1.idx left join mylayout.property_paymentype p2 on p.tp=p2.idx</DbTable>
+<Data>p0.name_room payer_id,p.payer,p.phone,p.prebalance,p.curbalance,p.dt_pay,p1.name method,p2.name tp,p.code,p.curaccounts,p.paidaccounts,p.yd_skr,p.enteredby,p.dt_enter,p.stat,p.remark,p.id_payment</Data>
+<Order>id_payment</Order></DbDetails>
+<DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_payment_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

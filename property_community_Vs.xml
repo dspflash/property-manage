@@ -1,0 +1,14 @@
+﻿<GroupBox Name="GBDEDITproperty_community" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_code_comm" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_code_comm" Size="60,20" Text="code_comm" Align="Right"/>
+<TextBox Name="code_comm" Size="170,20" Text="" Weight="170" ToolTip="ttp_code_comm"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_name_comm" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_name_comm" Size="60,20" Text="name_comm" Align="Right"/>
+<TextBox Name="name_comm" Size="170,20" Text="" Weight="170" ToolTip="ttp_name_comm"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_addr" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_addr" Size="60,20" Text="addr" Align="Right"/>
+<TextBox Name="addr" Size="170,20" Text="" Weight="170" ToolTip="ttp_addr"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

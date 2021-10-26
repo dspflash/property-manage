@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproperty_room" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="property_roomLst" ToolTip="ttp_property_room" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id_room</Index>
+<DbTable>mylayout.property_room</DbTable>
+<Data>code_room,name_room,layers,roomtp,owner,ownerphone,owneridcard,ownerfirm,property_no,parking_no,area_ct,area_real,isrent,dt_rentdue,remark,fw_lydy,deposit,enteredby,dt_enter,dt_update,stat,id_room</Data>
+<Order>id_room</Order></DbDetails>
+<OnClick><assign name="roomtp[idx]" expr="%{property_roomLst[roomtp]}" function="SetSel"/>
+<if cond="%{id_room}"><SetVisible name="insertproperty_room" Visible="0"/><SetVisible name="modifyproperty_room" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

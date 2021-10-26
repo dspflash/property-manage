@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGproperty_repairs"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_property_repairs" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>id_repairs</Index>
+<DbTable>mylayout.property_repairs p left join mylayout.statusinfo s on p.stat4repair=s.status_id left join mylayout.dealwith d on p.dealwith=d.dealwith_id left join mylayout.property_repairtp p0 on p.repair_tp=p0.idx left join mylayout.userlogin u on p.staff2repair=u.user_code left join mylayout.userlogin u0 on p.interviewby=u0.user_code left join mylayout.userlogin u1 on p.staff2enter=u1.user_code left join mylayout.property_community p1 on p.id_comm=p1.id_comm left join mylayout.property_building p2 on p.id_build=p2.id_build left join mylayout.property_room p3 on p.id_room=p3.id_room left join mylayout.satisfaction s0 on p.satisfaction=s0.id_satisfaction</DbTable>
+<Data>count(*) records</Data>
+<Order>id_repairs</Order><Queryformat>select %{data} from (select p.id_repairs from %{dbtable} %{where} GROUP BY p.id_repairs  ORDER BY p.id_repairs) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_property_repairs" expr="js(Math.ceil(%{records_property_repairs}/%{property_repairs_vLst[countsperpage]}))"/>
+<assign name="pgscb_property_repairs" expr="js('1~'+Math.ceil(%{records_property_repairs}/%{property_repairs_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_property_repairs" Size="60,20"><OnSelEndOK><submit next="property_repairs_vLst" function="GetPage(%{pgscb_property_repairs}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_property_repairs" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_property_repairs" Size="30,20"/>
+<Button Text="go2Page" Name="go2pageproperty_repairs_vLst" Size="50,20"><OnClick><submit next="property_repairs_vLst" function="GetPage(%{pgcur_property_repairs}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

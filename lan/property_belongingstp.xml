@@ -1,0 +1,38 @@
+﻿<Language name="property_belongingstp">
+<Lang name="property_belongingstp" value="财产种类"/>
+<Lang name="TabEditproperty_belongingstp" value="property_belongingstp Edit"/>
+<Lang name="TabViewproperty_belongingstp" value="property_belongingstp View"/>
+<Lang name="name" value="名称"/>
+<Lang name="ttp_name" value=""/>
+<Lang name="code" value="编码"/>
+<Lang name="ttp_code" value=""/>
+<Lang name="modsize" value="规格型号"/>
+<Lang name="ttp_modsize" value=""/>
+<Lang name="price" value="参考单价"/>
+<Lang name="ttp_price" value=""/>
+<Lang name="units" value="单位"/>
+<Lang name="ttp_units" value=""/>
+<Lang name="remark" value=""/>
+<Lang name="ttp_remark" value=""/>
+<Lang name="stat" value=""/>
+<Lang name="ttp_stat" value=""/>
+<Lang name="id_corp" value=""/>
+<Lang name="ttp_id_corp" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationproperty_belongingstp" value=""/>
+<Lang name="ttp_createproperty_belongingstp" value=""/>
+<Lang name="ttp_modifyproperty_belongingstp" value=""/>
+<Lang name="ttp_resetproperty_belongingstp" value=""/>
+<Lang name="ttp_deleteproperty_belongingstp" value=""/>
+<Lang name="ttp_refreshproperty_belongingstp" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

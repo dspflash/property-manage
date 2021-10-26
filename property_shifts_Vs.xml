@@ -1,0 +1,32 @@
+﻿<GroupBox Name="GBDEDITproperty_shifts" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_shiftitem" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_shiftitem" Size="60,20" Text="shiftitem" Align="Right"/>
+<TextBox Name="shiftitem" Size="170,20" Text="" Weight="170" ToolTip="ttp_shiftitem"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_staffs" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_staffs" Size="60,20" Text="staffs" Align="Right"/>
+<TextBox Name="staffs" Size="170,20" Text="" Weight="170" ToolTip="ttp_staffs"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_comm" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_id_comm" Size="60,20" Text="id_comm" Align="Right"  onload="init"/>
+<ComboBox Name="id_comm" Size="170,100" Text="" Weight="170"  ToolTip="ttp_id_comm"  onload="init">
+	<DbDetails>
+<Index>id_comm</Index>
+<DbTable>mylayout.property_community</DbTable>
+<Data>name_comm,id_comm</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_dt" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_dt" Size="60,20" Text="dt" Align="Right"/>
+<DateTime Name="dt" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_dt"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_shiftype" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_shiftype" Size="60,20" Text="shiftype" Align="Right"/>
+<TextBox Name="shiftype" Size="170,20" Text="" Weight="170" ToolTip="ttp_shiftype"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_remark" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_remark" Size="60,20" Text="remark" Align="Right"/>
+<TextBox Name="remark" Size="170,20" Text="" Weight="170" ToolTip="ttp_remark"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

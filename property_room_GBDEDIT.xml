@@ -1,0 +1,104 @@
+﻿<GroupBox Name="GBDEDITproperty_room"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_code_room"><Ctrls>
+<Label Align="Right" Text="code_room" Name="lb_code_room" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_code_room" Name="code_room" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_name_room"><Ctrls>
+<Label Align="Right" Text="name_room" Name="lb_name_room" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name_room" Name="name_room" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_layers"><Ctrls>
+<Label Align="Right" Text="layers" Name="lb_layers" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_layers" Name="layers" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_roomtp"><Ctrls>
+<Label Align="Right" Text="roomtp" onload="init" Name="lb_roomtp" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_roomtp" onload="init" Name="roomtp" Size="170,100">
+	<DbDetails>
+<Index>idx</Index>
+<DbTable>mylayout.property_roomtp</DbTable>
+<Data>name,idx</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_owner"><Ctrls>
+<Label Align="Right" Text="owner" Name="lb_owner" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_owner" Name="owner" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_ownerphone"><Ctrls>
+<Label Align="Right" Text="ownerphone" Name="lb_ownerphone" Size="60,20"/>
+<TextBox Weight="150" Text="" ToolTip="ttp_ownerphone" Name="ownerphone" Size="150,20"/>
+<MagicCtrl ToolTip="DialToCall" Name="dialownerphone" OnClick="nis3ucs:%{ownerphone}" images=" ,data/startcall_green.png" button="type:0" Size="20,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_owneridcard"><Ctrls>
+<Label Align="Right" Text="owneridcard" Name="lb_owneridcard" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_owneridcard" Name="owneridcard" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_ownerfirm"><Ctrls>
+<Label Align="Right" Text="ownerfirm" Name="lb_ownerfirm" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_ownerfirm" Name="ownerfirm" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_property_no"><Ctrls>
+<Label Align="Right" Text="property_no" Name="lb_property_no" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_property_no" Name="property_no" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_parking_no"><Ctrls>
+<Label Align="Right" Text="parking_no" Name="lb_parking_no" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_parking_no" Name="parking_no" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_area_ct"><Ctrls>
+<Label Align="Right" Text="area_ct" Name="lb_area_ct" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_area_ct" Name="area_ct" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_area_real"><Ctrls>
+<Label Align="Right" Text="area_real" Name="lb_area_real" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_area_real" Name="area_real" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_isrent"><Ctrls>
+<Label Align="Right" Text="isrent" Name="lb_isrent" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_isrent" Items="否|是" Name="isrent" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_rentdue" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_rentdue" overlap="pre" Name="lb_dt_rentdue" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_rentdue" overlap="pre" Name="dt_rentdue" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_remark" Name="remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_fw_lydy"><Ctrls>
+<Label Align="Right" Text="fw_lydy" Name="lb_fw_lydy" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_fw_lydy" Name="fw_lydy" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_deposit"><Ctrls>
+<Label Align="Right" Text="deposit" Name="lb_deposit" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_deposit" Name="deposit" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_enteredby" Visible="false"><Ctrls>
+<Label Align="Right" Text="enteredby" overlap="pre" Name="lb_enteredby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_enteredby" overlap="pre" Name="enteredby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_enter" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_enter" overlap="pre" Name="lb_dt_enter" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_enter" overlap="pre" Name="dt_enter" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_update" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_update" overlap="pre" Name="lb_dt_update" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_update" overlap="pre" Name="dt_update" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_comm" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_comm" overlap="pre" Name="lb_id_comm" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_comm" overlap="pre" Name="id_comm" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_build" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_build" overlap="pre" Name="lb_id_build" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_build" overlap="pre" Name="id_build" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_stat" Visible="false"><Ctrls>
+<CheckBox Text="stat" ToolTip="ttp_stat" overlap="pre" Name="stat" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_room" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_room" overlap="pre" Name="lb_id_room" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_room" overlap="pre" Name="id_room" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id_room}'"><SetVisible name="insertproperty_room" Visible="0"/><SetVisible name="modifyproperty_room" Visible="1"/><else/><SetVisible name="insertproperty_room" Visible="1"/><SetVisible name="modifyproperty_room" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

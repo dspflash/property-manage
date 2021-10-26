@@ -1,0 +1,32 @@
+<WndTap Text="RoomPick" Name="property_room_Pick" Ver="2" popup="1">
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\property_room.xml"/>
+	<Ctrls>
+	<GroupBox Text="property_room" Name="GBproperty_room" id="property_room" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_room_vsm.xml"/>
+<BR autoHeight="1"/>
+<GroupBox cols="xs12 sm12 md12 lg12" Name="GBOPDVitem"><Ctrls>
+<Button Text="gsearch" ToolTip="ttp_gsearchitem" Name="gsearchitem" Size="50,20" visible="true">
+	<OnClick>
+	<search next="property_room_vLst" listed="0" prefixand="0" inputed="1"><city format="(x.city like '%%{opvalue}%' or x.chinaspell like '%%{opvalue}%' or x.chinaspellall like '%%{opvalue}%' or x.pinyin like '%%{opvalue}%')"/><parentcityid format="!ROUND(x0.LeverCode/100000) and (x0.city like '%{opvalue}%' or x0.chinaspell like '%{opvalue}%' or x0.pinyin like '%{opvalue}%')"/></search><submit next="GBDEDITproperty_room" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetitem" Name="resetitem" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITproperty_room" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>
+<BR autoHeight="1"/>
+<ListCtrl Name="property_room_vLst" ToolTip="ttp_property_room" Size="700,450" Heading="name_room,100;layers,30;roomtp,120;owner,100;ownerphone,100;owneridcard,150;ownerfirm,200;property_no,100;parking_no,100;area_ct,90;area_real,90;isrent,120;dt_rentdue,150;remark,250;code_room,100;fw_lydy,30;deposit,90;enteredby,100;dt_enter,150;dt_update,150;stat,60;id_room,55;" loadedclick="0">
+	<DbDetails >
+<Index>id_room</Index>
+<DbTable>mylayout.property_room p left join mylayout.property_roomtp p0 on p.roomtp=p0.idx</DbTable>
+<Data>p.name_room,p.layers,p0.name roomtp,p.owner,p.ownerphone,p.owneridcard,p.ownerfirm,p.property_no,p.parking_no,p.area_ct,p.area_real,p.isrent,p.dt_rentdue,p.remark,p.code_room,p.fw_lydy,p.deposit,p.enteredby,p.dt_enter,p.dt_update,p.stat,p.id_room</Data>
+<Order>id_room</Order></DbDetails>
+	<OnClick><if cond="%{property_room_vLst[id_room]}"><DbDetails><Where>id_room='%{property_room_vLst[id_room]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.%{frmwndctrl}"/><submit function="onok"/></if></OnClick>
+	</ListCtrl>
+	</Ctrls></GroupBox>
+	</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

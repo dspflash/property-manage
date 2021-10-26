@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVproperty_community"><Ctrls>
+<ListCtrl Heading="code_comm,100;name_comm,150;addr,250;numbuilding,30;numroom,30;numresident,30;asigned2,100;enteredby,100;dt_enter,150;dt_update,150;remark,250;stat,60;id_comm,55;" loadedclick="0" ToolTip="ttp_property_community" Name="property_communityLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>id_comm</Index>
+<DbTable>mylayout.property_community</DbTable>
+<Data>code_comm,name_comm,addr,numbuilding,numroom,numresident,asigned2,enteredby,dt_enter,dt_update,remark,stat,id_comm</Data>
+<Order>id_comm</Order></DbDetails><DbDetails><DbTable>mylayout.property_community p left join mylayout.addresses_loc_v a on a.reftbltp='property_community' and p.id_comm=a.refid</DbTable><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_community_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

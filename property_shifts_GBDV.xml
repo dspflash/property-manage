@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVproperty_shifts"><Ctrls>
+<ListCtrl Heading="shiftitem,40;staffs,200;id_comm,120;dt,150;shiftype,40;remark,250;stat,60;enteredby,100;dt_enter,150;id_shifts,55;" loadedclick="0" ToolTip="ttp_property_shifts" Name="property_shiftsLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>id_shifts</Index>
+<DbTable>mylayout.property_shifts p left join mylayout.property_community p0 on p.id_comm=p0.id_comm</DbTable>
+<Data>p.shiftitem,p.staffs,p0.name_comm id_comm,p.dt,p.shiftype,p.remark,p.stat,p.enteredby,p.dt_enter,p.id_shifts</Data>
+<Order>id_shifts</Order></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>id_shifts='%{property_shifts_vLst[id_shifts]}'</Where></DbDetails><submit next="$this.property_shifts.property_shiftsLst" namelist="DbDetails"/><assign name="$this.property_shifts.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_shifts</DbTable>
+<Where>id_shifts='%{property_shifts_vLst[id_shifts]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

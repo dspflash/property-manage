@@ -1,0 +1,58 @@
+﻿<GroupBox Name="GBDEDITproperty_charge"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_code_charge"><Ctrls>
+<Label Align="Right" Text="code_charge" Name="lb_code_charge" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_code_charge" Name="code_charge" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_name_charge"><Ctrls>
+<Label Align="Right" Text="name_charge" Name="lb_name_charge" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name_charge" Name="name_charge" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_rule"><Ctrls>
+<Label Align="Right" Text="rule" onload="init" Name="lb_rule" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_rule" onload="init" Name="rule" Size="170,100">
+	<DbDetails fcsm="true">
+<Index>id_rule</Index>
+<DbTable>mylayout.property_chargerule</DbTable>
+<Data>name_rule ruleinfo,id_rule</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_ruleinfo"><Ctrls>
+<Label Align="Right" Text="ruleinfo" Name="lb_ruleinfo" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_ruleinfo" Name="ruleinfo" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_price"><Ctrls>
+<Label Align="Right" Text="price" Name="lb_price" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_price" Name="price" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_periodinfo"><Ctrls>
+<Label Align="Right" Text="periodinfo" onload="init" Name="lb_periodinfo" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_periodinfo" onload="init" Name="periodinfo" Size="170,100">
+	<DbDetails>
+<Index/>
+<DbTable>mylayout.period</DbTable>
+<Data>namecn,idx,num</Data>
+<Where>idx&gt;5</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_remark" Name="remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_period"><Ctrls>
+<Label Align="Right" Text="period" Name="lb_period" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_period" Name="period" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_update" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_update" overlap="pre" Name="lb_dt_update" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_update" overlap="pre" Name="dt_update" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_id_corp"><Ctrls>
+<Label Align="Right" Text="id_corp" Name="lb_id_corp" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_corp" Name="id_corp" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_charge" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_charge" overlap="pre" Name="lb_id_charge" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_charge" overlap="pre" Name="id_charge" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id_charge}'"><SetVisible name="insertproperty_charge" Visible="0"/><SetVisible name="modifyproperty_charge" Visible="1"/><else/><SetVisible name="insertproperty_charge" Visible="1"/><SetVisible name="modifyproperty_charge" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

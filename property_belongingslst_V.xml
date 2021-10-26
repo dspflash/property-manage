@@ -1,0 +1,20 @@
+﻿<WndTap Name="property_belongingslst_v" Text="property_belongingslst">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_belongingslst_Ve.xml" popup="1"/>
+</WndTaps>
+<var name="searchtmpl"><id_belongings format="p.id_belongings='%{opvalue}'"/><dt format="(p.dt between '%{dt[datetime]}' and '%{dt[datetime2]}')"/><outin format="(p.outin like '%%{opvalue}%')"/><responsible format="p.responsible='%{opvalue}'"/><price format="(p.price like '%%{opvalue}%')"/><cnts format="(p.cnts like '%%{opvalue}%')"/><amount format="(p.amount like '%%{opvalue}%')"/><remark format="(p.remark like '%%{opvalue}%')"/><stat format="p.stat is %{opvalue}"/><id_corp format="(p.id_corp like '%%{opvalue}%')"/><enteredby format="(p.enteredby like '%%{opvalue}%')"/><dt_enter format="(p.dt_enter between '%{dt_enter[datetime]}' and '%{dt_enter[datetime2]}')"/><id_belonginglst format="(p.id_belonginglst like '%%{opvalue}%')"/></var>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\property_belongingslst.xml"/>
+<Ctrls><GroupBox  Name="GBproperty_belongingslst" id="property_belongingslst" Text="property_belongingslst" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_belongingslst_Vs.xml"/>
+<BR AutoHeight="1"/><GroupBox  Name="GBOPVproperty_belongingslst" Size="100,20" cols="xs12 sm6 md4"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.property_belongingslst.GBDEDITproperty_belongingslst" function="reset"/><assign name="$this.property_belongingslst.frmwndctrl" expr="%{$this.property_belongingslst_vLst}"/></OnClick>	</Button><TAB/>	
+<Button Text="reset" ToolTip="ttp_resetproperty_belongingslst" Name="resetproperty_belongingslst" Size="50,20">	<OnClick>	<submit next="GBDEDITproperty_belongingslst" function="reset"/>	</OnClick>	</Button><TAB/>	
+<Button Text="Search" ToolTip="ttp_gsearchproperty_belongingslst" Name="gsearchproperty_belongingslst" Size="50,20">	<OnClick>	
+<search next="property_belongingslst_vLst" listed="0" prefixwhere="1" prefixand="0" inputed="1">%{searchtmpl}</search><submit next="GBDEDITproperty_belongingslst" namelist="search" function="search"/>	
+<search next="records_property_belongingslst" listed="0" prefixwhere="1" prefixand="0"  inputed="1">%{searchtmpl}</search><submit next="GBDEDITproperty_belongingslst" namelist="search" function="search"/>	
+</OnClick></Button><TAB/></Ctrls></GroupBox>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_belongingslst_Vpg.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_belongingslst_Vpgop.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_belongingslst_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

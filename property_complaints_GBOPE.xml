@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPEproperty_complaints" Size="100,100"><Ctrls>
+<Button sqlpkinsert="id_complaints" Text="create" ToolTip="ttp_createproperty_complaints" Name="insertproperty_complaints" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>mylayout.property_complaints</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>id_comm[id_comm],id_build[id_build],id_room[id_room],complaintp[idx],complainer,phone,remark,acceptance</Data>
+<DataEx>dt_complaint;now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertproperty_complaints[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_complaintsLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_complaints_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyproperty_complaints" Name="modifyproperty_complaints" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>mylayout.property_complaints</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>id_comm[id_comm],id_build[id_build],id_room[id_room],complaintp[idx],complainer,phone,remark,acceptance</Data>
+<DataEx/>
+<Where>id_complaints='%{id_complaints}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyproperty_complaints[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_complaintsLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_complaints_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetproperty_complaints" Name="resetproperty_complaints" Size="50,20">
+<OnClick>
+<submit next="GBDEDITproperty_complaints" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchproperty_complaints" Name="gsearchproperty_complaints" Size="50,20" visible="false">
+<OnClick>
+<search next="property_complaintsLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITproperty_complaints" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGproperty_finance"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_property_finance" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>id_finance</Index>
+<DbTable>mylayout.property_finance p left join mylayout.property_community p0 on p.id_comm=p0.id_comm left join mylayout.property_financetp p1 on p.tp=p1.idx</DbTable>
+<Data>count(*) records</Data>
+<Order>id_finance</Order><Queryformat>select %{data} from (select p.id_finance from %{dbtable} %{where} GROUP BY p.id_finance  ORDER BY p.id_finance) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_property_finance" expr="js(Math.ceil(%{records_property_finance}/%{property_finance_vLst[countsperpage]}))"/>
+<assign name="pgscb_property_finance" expr="js('1~'+Math.ceil(%{records_property_finance}/%{property_finance_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_property_finance" Size="60,20"><OnSelEndOK><submit next="property_finance_vLst" function="GetPage(%{pgscb_property_finance}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_property_finance" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_property_finance" Size="30,20"/>
+<Button Text="go2Page" Name="go2pageproperty_finance_vLst" Size="50,20"><OnClick><submit next="property_finance_vLst" function="GetPage(%{pgcur_property_finance}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

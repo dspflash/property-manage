@@ -1,0 +1,14 @@
+﻿<GroupBox Name="GBDEDITproperty_room" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_name_room" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_name_room" Size="60,20" Text="name_room" Align="Right"/>
+<TextBox Name="name_room" Size="170,20" Text="" Weight="170" ToolTip="ttp_name_room"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_comm" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_id_comm" Size="60,20" Text="id_comm" Align="Right"/>
+<TextBox Name="id_comm" Size="170,20" Text="" Weight="170" ToolTip="ttp_id_comm"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_build" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_id_build" Size="60,20" Text="id_build" Align="Right"/>
+<TextBox Name="id_build" Size="170,20" Text="" Weight="170" ToolTip="ttp_id_build"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

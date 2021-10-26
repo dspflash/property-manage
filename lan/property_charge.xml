@@ -1,0 +1,42 @@
+﻿<Language name="property_charge">
+<Lang name="property_charge" value="收费项目"/>
+<Lang name="TabEditproperty_charge" value="property_charge Edit"/>
+<Lang name="TabViewproperty_charge" value="property_charge View"/>
+<Lang name="name" value="收费名称"/>
+<Lang name="ttp_name" value=""/>
+<Lang name="code" value="名称简码"/>
+<Lang name="ttp_code" value=""/>
+<Lang name="ruleinfo" value="计费规则"/>
+<Lang name="ttp_ruleinfo" value=""/>
+<Lang name="price" value=""/>
+<Lang name="ttp_price" value=""/>
+<Lang name="periodinfo" value="计费周期"/>
+<Lang name="ttp_periodinfo" value=""/>
+<Lang name="remark" value=""/>
+<Lang name="ttp_remark" value=""/>
+<Lang name="rule" value=""/>
+<Lang name="ttp_rule" value=""/>
+<Lang name="period" value=""/>
+<Lang name="ttp_period" value=""/>
+<Lang name="dt_update" value=""/>
+<Lang name="ttp_dt_update" value=""/>
+<Lang name="id_corp" value=""/>
+<Lang name="ttp_id_corp" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationproperty_charge" value=""/>
+<Lang name="ttp_createproperty_charge" value=""/>
+<Lang name="ttp_modifyproperty_charge" value=""/>
+<Lang name="ttp_resetproperty_charge" value=""/>
+<Lang name="ttp_deleteproperty_charge" value=""/>
+<Lang name="ttp_refreshproperty_charge" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

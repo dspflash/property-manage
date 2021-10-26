@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproperty_charge" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="property_chargeLst" ToolTip="ttp_property_charge" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id_charge</Index>
+<DbTable>mylayout.property_charge</DbTable>
+<Data>code_charge,name_charge,rule,ruleinfo,price,periodinfo,remark,period,dt_update,id_corp,id_charge</Data>
+<Order>id_charge</Order></DbDetails>
+<OnClick><assign name="rule[id_rule]" expr="%{property_chargeLst[rule]}" function="SetSel"/>
+<if cond="%{id_charge}"><SetVisible name="insertproperty_charge" Visible="0"/><SetVisible name="modifyproperty_charge" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

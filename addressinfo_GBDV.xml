@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVaddressinfo"><Ctrls>
+<ListCtrl Heading="addressname,100;addr,500;county,250;city,250;province,250;nation,250;contact,100;telphone,100;postal_code,100;address,500;address_distance,55;address_position,50;poi,500;poi_distance,55;poi_position,50;landmark,250;landmark_distance,55;landmark_position,50;road,100;road_distance,55;county_code,50;created_by,55;creation_date,150;last_update_by,55;last_update_date,150;addressinfoid,100;addrlng,20;addrlat,20;city_code,50;province_code,50;active,60;" loadedclick="0" ToolTip="ttp_addressinfo" Name="addressinfoLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>addressinfoid</Index>
+<DbTable>mylayout.addressinfo</DbTable>
+<Data>addressname,addr,county,city,province,nation,contact,telphone,postal_code,address,address_distance,address_position,poi,poi_distance,poi_position,landmark,landmark_distance,landmark_position,road,road_distance,county_code,created_by,creation_date,last_update_by,last_update_date,addressinfoid,addrlng,addrlat,city_code,province_code,active</Data>
+<Order>addressinfoid</Order></DbDetails><DbDetails fcsm="1"><Where>reftbltp='%{reftbltp}' and refid='%{refid}'</Where></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="addressinfo_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

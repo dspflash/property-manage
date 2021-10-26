@@ -1,0 +1,54 @@
+﻿<Language name="property_payment">
+<Lang name="property_payment" value="收付管理"/>
+<Lang name="TabEditproperty_payment" value="property_payment Edit"/>
+<Lang name="TabViewproperty_payment" value="property_payment View"/>
+<Lang name="payer_id" value="业    主"/>
+<Lang name="ttp_payer_id" value=""/>
+<Lang name="payer" value="缴 费 人"/>
+<Lang name="ttp_payer" value=""/>
+<Lang name="phone" value="联系电话"/>
+<Lang name="ttp_phone" value=""/>
+<Lang name="prebalance" value="上期结余"/>
+<Lang name="ttp_prebalance" value=""/>
+<Lang name="dt_pay" value="缴费时间"/>
+<Lang name="ttp_dt_pay" value=""/>
+<Lang name="curbalance" value="本期结余"/>
+<Lang name="ttp_curbalance" value=""/>
+<Lang name="method" value="支付方式"/>
+<Lang name="ttp_method" value=""/>
+<Lang name="tp" value="缴付类别"/>
+<Lang name="ttp_tp" value=""/>
+<Lang name="remark" value=""/>
+<Lang name="ttp_remark" value=""/>
+<Lang name="code" value=""/>
+<Lang name="ttp_code" value=""/>
+<Lang name="curaccounts" value="本期应缴"/>
+<Lang name="ttp_curaccounts" value=""/>
+<Lang name="paidaccounts" value="实收金额"/>
+<Lang name="ttp_paidaccounts" value=""/>
+<Lang name="yd_skr" value=""/>
+<Lang name="ttp_yd_skr" value=""/>
+<Lang name="enteredby" value=""/>
+<Lang name="ttp_enteredby" value=""/>
+<Lang name="dt_enter" value=""/>
+<Lang name="ttp_dt_enter" value=""/>
+<Lang name="stat" value=""/>
+<Lang name="ttp_stat" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationproperty_payment" value=""/>
+<Lang name="ttp_createproperty_payment" value=""/>
+<Lang name="ttp_modifyproperty_payment" value=""/>
+<Lang name="ttp_resetproperty_payment" value=""/>
+<Lang name="ttp_deleteproperty_payment" value=""/>
+<Lang name="ttp_refreshproperty_payment" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

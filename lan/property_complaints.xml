@@ -1,0 +1,52 @@
+﻿<Language name="property_complaints">
+<Lang name="property_complaints" value="投诉管理"/>
+<Lang name="TabEditproperty_complaints" value="property_complaints Edit"/>
+<Lang name="TabViewproperty_complaints" value="property_complaints View"/>
+<Lang name="complaintp" value="投诉类别"/>
+<Lang name="ttp_complaintp" value=""/>
+<Lang name="complainer" value="投 诉 人"/>
+<Lang name="ttp_complainer" value=""/>
+<Lang name="phone" value="联系电话"/>
+<Lang name="ttp_phone" value=""/>
+<Lang name="remark" value=""/>
+<Lang name="ttp_remark" value=""/>
+<Lang name="dealwithinfo" value="回访登记"/>
+<Lang name="ttp_dealwithinfo" value=""/>
+<Lang name="dt_interview" value="回访时间"/>
+<Lang name="ttp_dt_interview" value=""/>
+<Lang name="interviewer" value="回访人"/>
+<Lang name="ttp_interviewer" value=""/>
+<Lang name="interviewinfo" value="回访情况"/>
+<Lang name="ttp_interviewinfo" value=""/>
+<Lang name="acceptance" value="验 收 人"/>
+<Lang name="ttp_acceptance" value=""/>
+<Lang name="satisfaction" value="不满意|满意|很满意"/>
+<Lang name="ttp_satisfaction" value=""/>
+<Lang name="interviewby" value=""/>
+<Lang name="ttp_interviewby" value=""/>
+<Lang name="dt_complaint" value="投诉时间"/>
+<Lang name="ttp_dt_complaint" value=""/>
+<Lang name="dt_dealwith" value="处理时间"/>
+<Lang name="ttp_dt_dealwith" value=""/>
+<Lang name="staff2dealwith" value="处理人员"/>
+<Lang name="ttp_staff2dealwith" value=""/>
+<Lang name="stat4dealwith" value="未处理|已处理"/>
+<Lang name="ttp_stat4dealwith" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationproperty_complaints" value=""/>
+<Lang name="ttp_createproperty_complaints" value=""/>
+<Lang name="ttp_modifyproperty_complaints" value=""/>
+<Lang name="ttp_resetproperty_complaints" value=""/>
+<Lang name="ttp_deleteproperty_complaints" value=""/>
+<Lang name="ttp_refreshproperty_complaints" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

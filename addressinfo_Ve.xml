@@ -1,0 +1,13 @@
+﻿<WndTap Name="addressinfo" Text="addressinfo" Ver="2">
+<var name="refreshAfterEdit" expr="0"/>
+<var name="dataRequired" expr="reftbltp,refid,address"/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\addressinfo.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBaddressinfo" id="addressinfo" Text="addressinfo" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="addressinfo_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="addressinfo_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="addressinfo_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertaddressinfo" Visible="1"/><SetVisible name="modifyaddressinfo" Visible="0"/></OnActivate>
+</WndTap>

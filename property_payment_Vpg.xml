@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGproperty_payment"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_property_payment" Size="40,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>id_payment</Index>
+<DbTable>mylayout.property_payment p left join mylayout.property_room p0 on p.payer_id=p0.id_room left join mylayout.paymentmethod p1 on p.method=p1.idx left join mylayout.property_paymentype p2 on p.tp=p2.idx</DbTable>
+<Data>count(*) records</Data>
+<Order>id_payment</Order><Queryformat>select %{data} from (select p.id_payment from %{dbtable} %{where} GROUP BY p.id_payment  ORDER BY p.id_payment) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_property_payment" expr="js(Math.ceil(%{records_property_payment}/%{property_payment_vLst[countsperpage]}))"/>
+<assign name="pgscb_property_payment" expr="js('1~'+Math.ceil(%{records_property_payment}/%{property_payment_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_property_payment" Size="60,20"><OnSelEndOK><submit next="property_payment_vLst" function="GetPage(%{pgscb_property_payment}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_property_payment" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_property_payment" Size="30,20"/>
+<Button Text="go2Page" Name="go2pageproperty_payment_vLst" Size="50,20"><OnClick><submit next="property_payment_vLst" function="GetPage(%{pgcur_property_payment}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

@@ -1,0 +1,10 @@
+﻿<GroupBox Name="GBDEDITproperty_charge" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_code_charge" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_code_charge" Size="60,20" Text="code_charge" Align="Right"/>
+<TextBox Name="code_charge" Size="170,20" Text="" Weight="170" ToolTip="ttp_code_charge"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_name_charge" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_name_charge" Size="60,20" Text="name_charge" Align="Right"/>
+<TextBox Name="name_charge" Size="170,20" Text="" Weight="170" ToolTip="ttp_name_charge"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

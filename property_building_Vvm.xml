@@ -1,0 +1,15 @@
+﻿<GroupBox Name="GBDVproperty_building" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="property_building_vLst" ToolTip="ttp_property_building_v" Size="700,450" OnLoad="init" Heading="code_build,100;name_build,150;dt_const,150;layers,30;rooms,30;residents,30;structure,100;remark,250;enteredby,100;dt_enter,150;dt_update,150;id_comm,55;stat,60;id_build,55;" loadedclick="0">
+	<DbDetails >
+<Index>id_build</Index>
+<DbTable>mylayout.property_building p</DbTable>
+<Data>p.code_build,p.name_build,p.dt_const,p.layers,p.rooms,p.residents,p.structure,p.remark,p.enteredby,p.dt_enter,p.dt_update,p.id_comm,p.stat,p.id_build,location</Data>
+<Order>id_build</Order></DbDetails>
+<DbDetails><DbTable>mylayout.property_building p left join mylayout.addresses_loc_v a on a.reftbltp='property_building' and p.id_comm=a.refid</DbTable></DbDetails>
+<DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_building_ops.xml"/>
+<OnChanged>
+<assign name="pgcur_property_building" expr="js(%{property_building_vLst[currentpage]}+1)"/>
+<assign name="pgscb_property_building" expr="js(%{property_building_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

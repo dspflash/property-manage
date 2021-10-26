@@ -1,0 +1,134 @@
+﻿<GroupBox Name="GBDEDITaddressinfo" toggle="1"><Ctrls>
+<GroupBox Name="GB_addressname" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_addressname" Size="60,20" Text="addressname" Align="Right"/>
+<TextBox Name="addressname" Size="170,20" Text="" Weight="170" ToolTip="ttp_addressname"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_addr" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_addr" Size="60,20" Text="addr" Align="Right"/>
+<TextBox Name="addr" Size="150,20" Text="" Weight="150" ToolTip="ttp_addr"></TextBox>
+<MagicCtrl Name="pickaddr" Link="tip:Pick" images=",data/marker.png" button="type:0" Size="20,20"><OnClick><assign name="$parent.address_pick.map" expr="http://localhost/xmappicker?mark=%{addrlng},%{addrlat}" function="Navigate"/><assign name="$parent.address_pick.pts2Mark" expr="'%{addrlng},%{addrlat}'"/><assign name="$parent.address_pick.frmwndctrl" expr="addressinfo"/><!--JavaScript>markAll('%{addrlng},%{addrlat}')</JavaScript><submit next="$parent.address_pick.map" namelist="JavaScript" function="RunJS"/--></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox Name="GB_county" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_county" Size="60,20" Text="county" Align="Right"/>
+<TextBox Name="county" Size="170,20" Text="" Weight="170" ToolTip="ttp_county"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_city" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_city" Size="60,20" Text="city" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="city" Size="170,20" Text="" Weight="170" ToolTip="ttp_city" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_province" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_province" Size="60,20" Text="province" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="province" Size="170,20" Text="" Weight="170" ToolTip="ttp_province" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_nation" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_nation" Size="60,20" Text="nation" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="nation" Size="170,20" Text="" Weight="170" ToolTip="ttp_nation" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_contact" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_contact" Size="60,20" Text="contact" Align="Right"/>
+<TextBox Name="contact" Size="170,20" Text="" Weight="170" ToolTip="ttp_contact"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_telphone" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_telphone" Size="60,20" Text="telphone" Align="Right"/>
+<TextBox Name="telphone" Size="150,20" Text="" Weight="150" ToolTip="ttp_telphone"></TextBox>
+<MagicCtrl Name="dialtelphone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{telphone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_postal_code" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_postal_code" Size="60,20" Text="postal_code" Align="Right"/>
+<TextBox Name="postal_code" Size="170,20" Text="" Weight="170" ToolTip="ttp_postal_code"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_reftbltp" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_reftbltp" Size="60,20" Text="reftbltp" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="reftbltp" Size="170,20" Text="" Weight="170" ToolTip="ttp_reftbltp" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_refid" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_refid" Size="60,20" Text="refid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="refid" Size="170,20" Text="" Weight="170" ToolTip="ttp_refid" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_address" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_address" Size="60,20" Text="address" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="address" Size="170,20" Text="" Weight="170" ToolTip="ttp_address" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_address_distance" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_address_distance" Size="60,20" Text="address_distance" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="address_distance" Size="170,20" Text="" Weight="170" ToolTip="ttp_address_distance" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_address_position" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_address_position" Size="60,20" Text="address_position" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="address_position" Size="170,20" Text="" Weight="170" ToolTip="ttp_address_position" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_poi" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_poi" Size="60,20" Text="poi" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="poi" Size="170,20" Text="" Weight="170" ToolTip="ttp_poi" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_poi_distance" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_poi_distance" Size="60,20" Text="poi_distance" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="poi_distance" Size="170,20" Text="" Weight="170" ToolTip="ttp_poi_distance" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_poi_position" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_poi_position" Size="60,20" Text="poi_position" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="poi_position" Size="170,20" Text="" Weight="170" ToolTip="ttp_poi_position" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_landmark" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_landmark" Size="60,20" Text="landmark" Align="Right"/>
+<TextBox Name="landmark" Size="170,20" Text="" Weight="170" ToolTip="ttp_landmark"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_landmark_distance" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_landmark_distance" Size="60,20" Text="landmark_distance" Align="Right"/>
+<TextBox Name="landmark_distance" Size="170,20" Text="" Weight="170" ToolTip="ttp_landmark_distance"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_landmark_position" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_landmark_position" Size="60,20" Text="landmark_position" Align="Right"/>
+<TextBox Name="landmark_position" Size="170,20" Text="" Weight="170" ToolTip="ttp_landmark_position"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_road" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_road" Size="60,20" Text="road" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="road" Size="170,20" Text="" Weight="170" ToolTip="ttp_road" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_road_distance" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_road_distance" Size="60,20" Text="road_distance" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="road_distance" Size="170,20" Text="" Weight="170" ToolTip="ttp_road_distance" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_county_code" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_county_code" Size="60,20" Text="county_code" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="county_code" Size="170,20" Text="" Weight="170" ToolTip="ttp_county_code" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_created_by" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_created_by" Size="60,20" Text="created_by" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="created_by" Size="170,20" Text="" Weight="170" ToolTip="ttp_created_by" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_creation_date" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_creation_date" Size="60,20" Text="creation_date" Align="Right" Visible="false" overlap="pre"/>
+<DateTime Name="creation_date" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_creation_date" Visible="false" overlap="pre"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_last_update_by" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_last_update_by" Size="60,20" Text="last_update_by" Align="Right" Visible="false" overlap="pre"/>
+<TextBox Name="last_update_by" Size="170,20" Text="" Weight="170" ToolTip="ttp_last_update_by" Visible="false" overlap="pre"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_last_update_date" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_last_update_date" Size="60,20" Text="last_update_date" Align="Right" Visible="false" overlap="pre"/>
+<DateTime Name="last_update_date" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_last_update_date" Visible="false" overlap="pre"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_addressinfoid" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_addressinfoid" Size="60,20" Text="addressinfoid" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="addressinfoid" Size="170,20" Text="" Weight="170" ToolTip="ttp_addressinfoid" Visible="false" overlap="pre" readonly="true"><OnEnChange><if cond="'%{addressinfoid}'"><SetVisible name="insertaddressinfo" Visible="0"/><SetVisible name="modifyaddressinfo" Visible="1"/><else/><SetVisible name="insertaddressinfo" Visible="1"/><SetVisible name="modifyaddressinfo" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_addrlng" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_addrlng" Size="60,20" Text="addrlng" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="addrlng" Size="170,20" Text="" Weight="170" ToolTip="ttp_addrlng" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_addrlat" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_addrlat" Size="60,20" Text="addrlat" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="addrlat" Size="170,20" Text="" Weight="170" ToolTip="ttp_addrlat" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_city_code" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_city_code" Size="60,20" Text="city_code" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="city_code" Size="170,20" Text="" Weight="170" ToolTip="ttp_city_code" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_province_code" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<Label Name="lb_province_code" Size="60,20" Text="province_code" Align="Right" Visible="false" overlap="pre" readonly="true"/>
+<TextBox Name="province_code" Size="170,20" Text="" Weight="170" ToolTip="ttp_province_code" Visible="false" overlap="pre" readonly="true"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_active" Multiline="0" cols="xs12 sm6 md4" Visible="false" overlap="pre"><Ctrls>
+<CheckBox Name="active" Size="230,20" Text="active" ToolTip="ttp_active" Visible="false" overlap="pre" readonly="true"></CheckBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

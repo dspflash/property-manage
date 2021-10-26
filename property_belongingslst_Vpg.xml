@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGproperty_belongingslst"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_property_belongingslst" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>id_belonginglst</Index>
+<DbTable>mylayout.property_belongingslst p left join mylayout.property_belongingstp p0 on p.id_belongings=p0.id_belongingtp left join mylayout.userlogin u on p.responsible=u.user_code</DbTable>
+<Data>count(*) records</Data>
+<Order>id_belonginglst</Order><Queryformat>select %{data} from (select p.id_belonginglst from %{dbtable} %{where} GROUP BY p.id_belonginglst  ORDER BY p.id_belonginglst) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_property_belongingslst" expr="js(Math.ceil(%{records_property_belongingslst}/%{property_belongingslst_vLst[countsperpage]}))"/>
+<assign name="pgscb_property_belongingslst" expr="js('1~'+Math.ceil(%{records_property_belongingslst}/%{property_belongingslst_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_property_belongingslst" Size="60,20"><OnSelEndOK><submit next="property_belongingslst_vLst" function="GetPage(%{pgscb_property_belongingslst}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_property_belongingslst" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_property_belongingslst" Size="30,20"/>
+<Button Text="go2Page" Name="go2pageproperty_belongingslst_vLst" Size="50,20"><OnClick><submit next="property_belongingslst_vLst" function="GetPage(%{pgcur_property_belongingslst}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

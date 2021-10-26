@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVproperty_repairs"><Ctrls>
+<ListCtrl Heading="stat4repair,120;dealwith,120;dealwithinfo,250;requester,100;phone,100;repair_tp,120;addr_request,200;remark,250;dt_request,150;dt2repair,150;staff2repair,55;interviewinfo,250;issues_remain,200;dt_interview,150;interviewby,55;staff2enter,120;acceptance,100;id_comm,120;id_build,120;id_room,120;satisfaction,120;id_corp,55;id_repairs,55;" loadedclick="0" ToolTip="ttp_property_repairs" Name="property_repairsLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>id_repairs</Index>
+<DbTable>mylayout.property_repairs p left join mylayout.statusinfo s on p.stat4repair=s.status_id left join mylayout.dealwith d on p.dealwith=d.dealwith_id left join mylayout.property_repairtp p0 on p.repair_tp=p0.idx left join mylayout.userlogin u on p.staff2repair=u.user_code left join mylayout.userlogin u0 on p.interviewby=u0.user_code left join mylayout.userlogin u1 on p.staff2enter=u1.user_code left join mylayout.property_community p1 on p.id_comm=p1.id_comm left join mylayout.property_building p2 on p.id_build=p2.id_build left join mylayout.property_room p3 on p.id_room=p3.id_room left join mylayout.satisfaction s0 on p.satisfaction=s0.id_satisfaction</DbTable>
+<Data>s.description stat4repair,d.description dealwith,p.dealwithinfo,p.requester,p.phone,p0.name repair_tp,p.addr_request,p.remark,p.dt_request,p.dt2repair,u.user_name staff2repair,p.interviewinfo,p.issues_remain,p.dt_interview,u0.user_name interviewby,u1.user_name staff2enter,p.acceptance,p1.name_comm id_comm,p2.name_build id_build,p3.name_room id_room,s0.satisfaction satisfaction,p.id_corp,p.id_repairs</Data>
+<Order>id_repairs</Order></DbDetails>
+<DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat><Where>where stat4repair!='2'</Where></DbDetails><DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat><Where>where stat4repair!='2'</Where></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>id_repairs='%{property_repairs_vLst[id_repairs]}'</Where></DbDetails><submit next="$this.property_repairs.property_repairsLst" namelist="DbDetails"/><assign name="$this.property_repairs.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_repairs</DbTable>
+<Where>id_repairs='%{property_repairs_vLst[id_repairs]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

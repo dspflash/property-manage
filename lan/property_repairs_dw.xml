@@ -1,0 +1,62 @@
+﻿<Language name="property_repairs">
+<Lang name="property_repairs" value="维修管理"/>
+<Lang name="TabEditproperty_repairs" value="property_repairs Edit"/>
+<Lang name="TabViewproperty_repairs" value="property_repairs View"/>
+<Lang name="requester" value="报 修 人"/>
+<Lang name="ttp_requester" value=""/>
+<Lang name="dt_request" value="报修时间"/>
+<Lang name="ttp_dt_request" value=""/>
+<Lang name="phone" value="联系电话"/>
+<Lang name="ttp_phone" value=""/>
+<Lang name="addr_request" value="报修地点"/>
+<Lang name="ttp_addr_request" value=""/>
+<Lang name="remark" value=""/>
+<Lang name="ttp_remark" value=""/>
+<Lang name="dt2repair" value="维修时间"/>
+<Lang name="ttp_dt2repair" value=""/>
+<Lang name="staff2repair" value="维修人员"/>
+<Lang name="ttp_staff2repair" value=""/>
+<Lang name="stat4repair" value="维修状态"/>
+<Lang name="ttp_stat4repair" value="0--under repair;1--repaired"/>
+<Lang name="dealwith" value="处理方式"/>
+<Lang name="ttp_dealwith" value="0--repaired;1--replace;2--added;3--other"/>
+<Lang name="dealwithinfo" value=""/>
+<Lang name="ttp_dealwithinfo" value=""/>
+<Lang name="dt_interview" value="回访时间"/>
+<Lang name="ttp_dt_interview" value=""/>
+<Lang name="interviewer" value="回访人"/>
+<Lang name="ttp_interviewer" value=""/>
+<Lang name="interviewinfo" value="回访情况"/>
+<Lang name="ttp_interviewinfo" value=""/>
+<Lang name="issues_remain" value="遗留问题"/>
+<Lang name="ttp_issues_remain" value=""/>
+<Lang name="repair_tp" value="报修类别"/>
+<Lang name="ttp_repair_tp" value=""/>
+<Lang name="staff2enter" value=""/>
+<Lang name="ttp_staff2enter" value=""/>
+<Lang name="acceptance" value=""/>
+<Lang name="ttp_acceptance" value=""/>
+<Lang name="satisfaction" value=""/>
+<Lang name="ttp_satisfaction" value="0--not satisfy;1--satisfied;2--very satisfied"/>
+<Lang name="interviewby" value=""/>
+<Lang name="ttp_interviewby" value=""/>
+<Lang name="id_corp" value=""/>
+<Lang name="ttp_id_corp" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationproperty_repairs" value=""/>
+<Lang name="ttp_createproperty_repairs" value=""/>
+<Lang name="ttp_modifyproperty_repairs" value=""/>
+<Lang name="ttp_resetproperty_repairs" value=""/>
+<Lang name="ttp_deleteproperty_repairs" value=""/>
+<Lang name="ttp_refreshproperty_repairs" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value="处理"/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

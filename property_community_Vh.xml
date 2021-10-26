@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproperty_community" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="property_communityLst" ToolTip="ttp_property_community" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id_comm</Index>
+<DbTable>mylayout.property_community</DbTable>
+<Data>code_comm,name_comm,addr,numbuilding,numroom,numresident,asigned2,enteredby,dt_enter,dt_update,remark,stat,id_comm</Data>
+<Order>id_comm</Order></DbDetails>
+<OnClick>
+<if cond="%{id_comm}"><SetVisible name="insertproperty_community" Visible="0"/><SetVisible name="modifyproperty_community" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

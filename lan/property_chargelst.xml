@@ -1,0 +1,54 @@
+﻿<Language name="property_chargelst">
+<Lang name="property_chargelst" value="收费明细"/>
+<Lang name="TabEditproperty_chargelst" value="property_chargelst Edit"/>
+<Lang name="TabViewproperty_chargelst" value="property_chargelst View"/>
+<Lang name="chargetype" value="收费类别"/>
+<Lang name="ttp_chargetype" value=""/>
+<Lang name="price" value="单价"/>
+<Lang name="ttp_price" value=""/>
+<Lang name="num" value="数量"/>
+<Lang name="ttp_num" value=""/>
+<Lang name="year" value="年"/>
+<Lang name="ttp_year" value=""/>
+<Lang name="month" value="月"/>
+<Lang name="ttp_month" value=""/>
+<Lang name="chargename" value="收费名称"/>
+<Lang name="ttp_chargename" value=""/>
+<Lang name="chargerule" value="计费规则"/>
+<Lang name="ttp_chargerule" value=""/>
+<Lang name="meterlast" value=""/>
+<Lang name="ttp_meterlast" value=""/>
+<Lang name="metercur" value=""/>
+<Lang name="ttp_metercur" value=""/>
+<Lang name="amount" value=""/>
+<Lang name="ttp_amount" value=""/>
+<Lang name="dt_pay" value=""/>
+<Lang name="ttp_dt_pay" value=""/>
+<Lang name="id_payment" value=""/>
+<Lang name="ttp_id_payment" value=""/>
+<Lang name="id_accountant" value=""/>
+<Lang name="ttp_id_accountant" value=""/>
+<Lang name="yy_sxid" value=""/>
+<Lang name="ttp_yy_sxid" value=""/>
+<Lang name="enteredby" value=""/>
+<Lang name="ttp_enteredby" value=""/>
+<Lang name="stat" value=""/>
+<Lang name="ttp_stat" value="0--payed;1--payable"/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationproperty_chargelst" value=""/>
+<Lang name="ttp_createproperty_chargelst" value=""/>
+<Lang name="ttp_modifyproperty_chargelst" value=""/>
+<Lang name="ttp_resetproperty_chargelst" value=""/>
+<Lang name="ttp_deleteproperty_chargelst" value=""/>
+<Lang name="ttp_refreshproperty_chargelst" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

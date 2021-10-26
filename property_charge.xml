@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><WndTap Text="property_charge" Name="property_charge" Ver="2">
+<var name="refreshAfterEdit" expr="1"/>
+<var name="dataRequired" expr="name_charge,rule[id_rule],price"/>
+<var name="dataRequireless" expr=""/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\property_charge.xml"/>
+<Ctrls>
+<GroupBox Text="property_charge" Name="GBproperty_charge" id="property_charge" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_charge_GBDEDIT.xml"></xi:include><BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_charge_GBOPE.xml"></xi:include>
+<TAB/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_charge_GBOPV.xml"></xi:include>
+<BR/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_charge_GBDV.xml"></xi:include></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

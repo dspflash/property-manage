@@ -1,0 +1,10 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="address"><assign name="$this.addressinfo_V.reftbltp" expr="property_community"/><assign name="$this.addressinfo_V.refid" expr="%{property_community_vLst[id_comm]}"/><submit next="$this.addressinfo_V.addressinfo_Vlst"/></op>
+<op text="Location"><assign name="$this.addressinfo_V.address_pick.map" expr="%{$this.addressinfo_V.address_pick.mapurl}?mark=%{property_community_vLst[location]}&zoom=100" function="Navigate"/><!--JavaScript>markAll('%{property_community_vLst[location]}')</JavaScript><submit next="$this.addressinfo_V.address_pick.map" namelist="JavaScript" function="RunJS"/--></op>
+<op text="modify"><DbDetails><Where>id_comm='%{property_community_vLst[id_comm]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.property_community.property_communityLst"/><assign name="$this.property_community.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_community</DbTable>
+<Where>id_comm='%{property_community_vLst[id_comm]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

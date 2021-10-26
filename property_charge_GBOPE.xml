@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPEproperty_charge" Size="100,100"><Ctrls>
+<Button sqlpkinsert="id_charge" Text="create" ToolTip="ttp_createproperty_charge" Name="insertproperty_charge" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>mylayout.property_charge</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>code_charge,name_charge,rule[id_rule],ruleinfo,price,periodinfo,remark,period,id_corp</Data>
+<DataEx>dt_update;now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertproperty_charge[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_chargeLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_charge_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyproperty_charge" Name="modifyproperty_charge" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>mylayout.property_charge</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>code_charge,name_charge,rule[id_rule],ruleinfo,price,periodinfo,remark,period,id_corp</Data>
+<DataEx>dt_update;now()</DataEx>
+<Where>id_charge='%{id_charge}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyproperty_charge[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_chargeLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_charge_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetproperty_charge" Name="resetproperty_charge" Size="50,20">
+<OnClick>
+<submit next="GBDEDITproperty_charge" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchproperty_charge" Name="gsearchproperty_charge" Size="50,20" visible="false">
+<OnClick>
+<search next="property_chargeLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITproperty_charge" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

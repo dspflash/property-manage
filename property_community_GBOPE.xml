@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPEproperty_community" Size="100,100"><Ctrls>
+<Button sqlpkinsert="id_comm" Text="create" ToolTip="ttp_createproperty_community" Name="insertproperty_community" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>mylayout.property_community</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>code_comm,name_comm,addr,numbuilding,numroom,numresident,asigned2,remark</Data>
+<DataEx>enteredby,dt_enter,dt_update;'%{user_id}',now(),now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertproperty_community[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_communityLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_community_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyproperty_community" Name="modifyproperty_community" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>mylayout.property_community</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>code_comm,name_comm,addr,numbuilding,numroom,numresident,asigned2,remark</Data>
+<DataEx>dt_update;now()</DataEx>
+<Where>id_comm='%{id_comm}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyproperty_community[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_communityLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_community_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetproperty_community" Name="resetproperty_community" Size="50,20">
+<OnClick>
+<submit next="GBDEDITproperty_community" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchproperty_community" Name="gsearchproperty_community" Size="50,20" visible="false">
+<OnClick>
+<search next="property_communityLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITproperty_community" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

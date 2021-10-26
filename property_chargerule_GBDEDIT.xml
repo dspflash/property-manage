@@ -1,0 +1,17 @@
+﻿<GroupBox Name="GBDEDITproperty_chargerule"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_name_rule"><Ctrls>
+<Label Align="Right" Text="name_rule" Name="lb_name_rule" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name_rule" Name="name_rule" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_formula"><Ctrls>
+<Label Align="Right" Text="formula" Name="lb_formula" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_formula" Name="formula" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_stat" Visible="false"><Ctrls>
+<CheckBox Text="stat" ToolTip="ttp_stat" overlap="pre" Name="stat" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_rule" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_rule" overlap="pre" Name="lb_id_rule" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_rule" overlap="pre" Name="id_rule" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id_rule}'"><SetVisible name="insertproperty_chargerule" Visible="0"/><SetVisible name="modifyproperty_chargerule" Visible="1"/><else/><SetVisible name="insertproperty_chargerule" Visible="1"/><SetVisible name="modifyproperty_chargerule" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

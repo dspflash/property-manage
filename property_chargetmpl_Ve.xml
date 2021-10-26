@@ -1,0 +1,13 @@
+﻿<WndTap Name="property_chargetmpl" Text="property_chargetmpl" Ver="2">
+<var name="refreshAfterEdit" expr="2"/>
+<var name="dataRequired" expr="id_comm[id_comm],chargetype[id_charge],price,num,chargerule[id_rule]"/>
+<var name="dataRequireless" expr=""/>
+<xi:include href="lan\property_chargetmpl.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBproperty_chargetmpl" id="property_chargetmpl" Text="property_chargetmpl" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_chargetmpl_GBDEDIT.xml"/>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_chargetmpl_GBOPE.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_chargetmpl_Vh.xml"/></Ctrls></GroupBox></Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate><SetVisible name="insertproperty_chargetmpl" Visible="1"/><SetVisible name="modifyproperty_chargetmpl" Visible="0"/></OnActivate>
+</WndTap>

@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDEDITproperty_payment" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_payer_id" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_payer_id" Size="60,20" Text="payer_id" Align="Right"/>
+<TextBox Name="payer_id" Size="150,20" Text="" Weight="150" ToolTip="ttp_payer_id">
+	<DbDetails fcsm="true">
+<Index>id_room</Index>
+<DbTable>mylayout.property_room</DbTable>
+<Data>name_room,owner payer,ownerphone phone,id_room</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></TextBox>
+<MagicCtrl Name="pickpayer_id" Link="tip:Pick" images=",data/search.png" button="type:0" Size="20,20"><OnClick><assign name="$this.property_room_pick.frmwndctrl" expr="payer_id"/></OnClick></MagicCtrl>\r\n</Ctrls></GroupBox>
+<GroupBox Name="GB_payer" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_payer" Size="60,20" Text="payer" Align="Right"/>
+<TextBox Name="payer" Size="170,20" Text="" Weight="170" ToolTip="ttp_payer"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_phone" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_phone" Size="60,20" Text="phone" Align="Right"/>
+<TextBox Name="phone" Size="150,20" Text="" Weight="150" ToolTip="ttp_phone"></TextBox>
+<MagicCtrl Name="dialphone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{phone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

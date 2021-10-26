@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><WndTap Text="property_finance" Name="property_finance" Ver="2">
+<var name="refreshAfterEdit" expr="1"/>
+<var name="dataRequired" expr="id_comm[id_comm],tp[idx],outin"/>
+<var name="dataRequireless" expr=""/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\property_finance.xml"/>
+<Ctrls>
+<GroupBox Text="property_finance" Name="GBproperty_finance" id="property_finance" Size="100,100"><Ctrls>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_finance_GBDEDIT.xml"></xi:include><BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_finance_GBOPE.xml"></xi:include>
+<TAB/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_finance_GBOPV.xml"></xi:include>
+<BR/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_finance_GBDV.xml"></xi:include></Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged/>
+	<OnActivate/>
+	</WndTap>

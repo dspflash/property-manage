@@ -1,0 +1,20 @@
+﻿<GroupBox Name="GBDVproperty_shifts" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="property_shifts_vLst" ToolTip="ttp_property_shifts_v" Size="700,450" OnLoad="init" Heading="shiftitem,40;staffs,200;id_comm,120;dt,150;shiftype,40;remark,250;stat,60;enteredby,100;dt_enter,150;id_shifts,55;" loadedclick="0">
+	<DbDetails >
+<Index>id_shifts</Index>
+<DbTable>mylayout.property_shifts p left join mylayout.property_community p0 on p.id_comm=p0.id_comm</DbTable>
+<Data>p.shiftitem,p.staffs,p0.name_comm id_comm,p.dt,p.shiftype,p.remark,p.stat,p.enteredby,p.dt_enter,p.id_shifts</Data>
+<Order>id_shifts</Order></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>id_shifts='%{property_shifts_vLst[id_shifts]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.property_shifts.property_shiftsLst"/><assign name="$this.property_shifts.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_shifts</DbTable>
+<Where>id_shifts='%{property_shifts_vLst[id_shifts]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_property_shifts" expr="js(%{property_shifts_vLst[currentpage]}+1)"/>
+<assign name="pgscb_property_shifts" expr="js(%{property_shifts_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,48 @@
+﻿<Language name="property_building">
+<Lang name="property_building" value="楼宇"/>
+<Lang name="TabEditproperty_building" value="property_building Edit"/>
+<Lang name="TabViewproperty_building" value="property_building View"/>
+<Lang name="code_build" value=""/>
+<Lang name="ttp_code_build" value=""/>
+<Lang name="name_build" value="楼宇名称"/>
+<Lang name="ttp_name_build" value=""/>
+<Lang name="id_comm" value="所属小区"/>
+<Lang name="ttp_id_comm" value=""/>
+<Lang name="layers" value="楼层数量"/>
+<Lang name="ttp_layers" value=""/>
+<Lang name="rooms" value="房屋数量"/>
+<Lang name="ttp_rooms" value=""/>
+<Lang name="residents" value="住户数量"/>
+<Lang name="ttp_residents" value=""/>
+<Lang name="structure" value="楼房结构"/>
+<Lang name="ttp_structure" value=""/>
+<Lang name="remark" value=""/>
+<Lang name="ttp_remark" value=""/>
+<Lang name="dt_const" value="建成日期"/>
+<Lang name="ttp_dt_const" value="constrution complete"/>
+<Lang name="enteredby" value=""/>
+<Lang name="ttp_enteredby" value=""/>
+<Lang name="dt_enter" value=""/>
+<Lang name="ttp_dt_enter" value=""/>
+<Lang name="dt_update" value=""/>
+<Lang name="ttp_dt_update" value=""/>
+<Lang name="stat" value=""/>
+<Lang name="ttp_stat" value=""/>
+<Lang name="id_build" value="序号"/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationproperty_building" value=""/>
+<Lang name="ttp_createproperty_building" value=""/>
+<Lang name="ttp_modifyproperty_building" value=""/>
+<Lang name="ttp_resetproperty_building" value=""/>
+<Lang name="ttp_deleteproperty_building" value=""/>
+<Lang name="ttp_refreshproperty_building" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

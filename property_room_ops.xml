@@ -1,0 +1,10 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="addone" mustselected="0"><if cond="!%{id_build}"><alert expr="id_build is Empty!"/><else/><submit next="$parent.property_room.GBDEDITproperty_room" function="reset"/><assign name="$parent.property_room.id_build" expr="%{id_build}"/><assign name="$parent.property_room.id_comm" expr="%{id_comm}"/><assign name="$parent.property_room.frmwndctrl" expr="%{this}"/></if></op>
+<op text="address"><assign name="$parent.addressinfo_V.reftbltp" expr="property_room"/><assign name="$parent.addressinfo_V.refid" expr="%{property_room_vLst[id_room]}"/><submit next="$parent.addressinfo_V.addressinfo_Vlst"/></op>
+<op text="modify"><DbDetails><Where>id_room='%{property_room_vLst[id_room]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.property_room.property_roomLst"/><assign name="$parent.property_room.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_room</DbTable>
+<Where>id_room='%{property_room_vLst[id_room]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

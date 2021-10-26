@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVproperty_chargetmpl" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteproperty_chargetmpl" Name="deleteproperty_chargetmpl" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mylayout.property_chargetmpl</DbTable>
+<Where>id_chargetmpl='%{property_chargetmplLst[id_chargetmpl]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchproperty_chargetmpl" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshproperty_chargetmpl" Name="searchproperty_chargetmpl" Size="50,20">
+			  <OnClick><submit next="property_chargetmplLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPproperty_chargetmplLst" OnClick="(property_chargetmplLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREproperty_chargetmplLst" OnClick="(property_chargetmplLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPproperty_chargetmplLst" OnClick="(property_chargetmplLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

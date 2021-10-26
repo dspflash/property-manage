@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproperty_repairs" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="property_repairsLst" ToolTip="ttp_property_repairs" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id_repairs</Index>
+<DbTable>mylayout.property_repairs</DbTable>
+<Data>requester,phone,repair_tp,stat4repair,addr_request,remark,dt_request,dealwith,dealwithinfo,dt2repair,staff2repair,satisfaction,interviewinfo,issues_remain,dt_interview,interviewby,staff2enter,acceptance,id_comm,id_build,id_room,id_corp,id_repairs</Data>
+<Order>id_repairs</Order></DbDetails>
+<OnClick><assign name="repair_tp[idx]" expr="%{property_repairsLst[repair_tp]}" function="SetSel"/><assign name="stat4repair[status_id]" expr="%{property_repairsLst[stat4repair]}" function="SetSel"/><assign name="dealwith[dealwith_id]" expr="%{property_repairsLst[dealwith]}" function="SetSel"/><assign name="staff2repair[user_code]" expr="%{property_repairsLst[staff2repair]}" function="SetSel"/><assign name="satisfaction[id_satisfaction]" expr="%{property_repairsLst[satisfaction]}" function="SetSel"/><assign name="interviewby[user_code]" expr="%{property_repairsLst[interviewby]}" function="SetSel"/><assign name="staff2enter[user_code]" expr="%{property_repairsLst[staff2enter]}" function="SetSel"/><assign name="id_comm[id_comm]" expr="%{property_repairsLst[id_comm]}" function="SetSel"/><assign name="id_build[id_build]" expr="%{property_repairsLst[id_build]}" function="SetSel"/><assign name="id_room[id_room]" expr="%{property_repairsLst[id_room]}" function="SetSel"/>
+<if cond="%{id_repairs}"><SetVisible name="insertproperty_repairs" Visible="0"/><SetVisible name="modifyproperty_repairs" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

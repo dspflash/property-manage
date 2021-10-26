@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGproperty_shifts"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_property_shifts" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>id_shifts</Index>
+<DbTable>mylayout.property_shifts p left join mylayout.property_community p0 on p.id_comm=p0.id_comm</DbTable>
+<Data>count(*) records</Data>
+<Order>id_shifts</Order><Queryformat>select %{data} from (select p.id_shifts from %{dbtable} %{where} GROUP BY p.id_shifts  ORDER BY p.id_shifts) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_property_shifts" expr="js(Math.ceil(%{records_property_shifts}/%{property_shifts_vLst[countsperpage]}))"/>
+<assign name="pgscb_property_shifts" expr="js('1~'+Math.ceil(%{records_property_shifts}/%{property_shifts_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_property_shifts" Size="60,20"><OnSelEndOK><submit next="property_shifts_vLst" function="GetPage(%{pgscb_property_shifts}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_property_shifts" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_property_shifts" Size="30,20"/>
+<Button Text="go2Page" Name="go2pageproperty_shifts_vLst" Size="50,20"><OnClick><submit next="property_shifts_vLst" function="GetPage(%{pgcur_property_shifts}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

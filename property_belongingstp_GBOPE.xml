@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPEproperty_belongingstp" Size="100,100"><Ctrls>
+<Button sqlpkinsert="id_belongingtp" Text="create" ToolTip="ttp_createproperty_belongingstp" Name="insertproperty_belongingstp" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>mylayout.property_belongingstp</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>code_belongingtp,name_belongingtp,modsize,units[idx],price,remark</Data>
+<DataEx>stat,id_corp;1,1</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertproperty_belongingstp[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_belongingstpLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_belongingstp_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyproperty_belongingstp" Name="modifyproperty_belongingstp" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>mylayout.property_belongingstp</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>code_belongingtp,name_belongingtp,modsize,units[idx],price,remark</Data>
+<DataEx/>
+<Where>id_belongingtp='%{id_belongingtp}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyproperty_belongingstp[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_belongingstpLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_belongingstp_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetproperty_belongingstp" Name="resetproperty_belongingstp" Size="50,20">
+<OnClick>
+<submit next="GBDEDITproperty_belongingstp" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchproperty_belongingstp" Name="gsearchproperty_belongingstp" Size="50,20" visible="false">
+<OnClick>
+<search next="property_belongingstpLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITproperty_belongingstp" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

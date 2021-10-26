@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPEproperty_room" Size="100,100"><Ctrls>
+<Button sqlpkinsert="id_room" Text="create" ToolTip="ttp_createproperty_room" Name="insertproperty_room" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>mylayout.property_room</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>code_room,name_room,layers,roomtp[idx],owner,ownerphone,owneridcard,ownerfirm,property_no,parking_no,area_ct,area_real,isrent,remark,fw_lydy,deposit,id_comm,id_build</Data>
+<DataEx>dt_rentdue,enteredby,dt_enter,dt_update,stat;if('%{isrent}',now(),NULL),'%{user_id}',now(),now(),1</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertproperty_room[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_roomLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_room_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyproperty_room" Name="modifyproperty_room" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>mylayout.property_room</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>code_room,name_room,layers,roomtp[idx],owner,ownerphone,owneridcard,ownerfirm,property_no,parking_no,area_ct,area_real,isrent,remark,fw_lydy,deposit</Data>
+<DataEx>dt_rentdue,dt_update;if('%{isrent}',now(),NULL),now()</DataEx>
+<Where>id_room='%{id_room}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyproperty_room[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_roomLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_room_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetproperty_room" Name="resetproperty_room" Size="50,20">
+<OnClick>
+<submit next="GBDEDITproperty_room" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchproperty_room" Name="gsearchproperty_room" Size="50,20" visible="false">
+<OnClick>
+<search next="property_roomLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITproperty_room" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

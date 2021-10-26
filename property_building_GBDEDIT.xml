@@ -1,0 +1,57 @@
+﻿<GroupBox Name="GBDEDITproperty_building"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_code_build"><Ctrls>
+<Label Align="Right" Text="code_build" Name="lb_code_build" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_code_build" Name="code_build" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_name_build"><Ctrls>
+<Label Align="Right" Text="name_build" Name="lb_name_build" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name_build" Name="name_build" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_dt_const"><Ctrls>
+<Label Align="Right" Text="dt_const" Name="lb_dt_const" Size="60,20"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_const" Name="dt_const" Size="170,20" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_layers"><Ctrls>
+<Label Align="Right" Text="layers" Name="lb_layers" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_layers" Name="layers" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_rooms"><Ctrls>
+<Label Align="Right" Text="rooms" Name="lb_rooms" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_rooms" Name="rooms" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_residents"><Ctrls>
+<Label Align="Right" Text="residents" Name="lb_residents" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_residents" Name="residents" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_structure"><Ctrls>
+<Label Align="Right" Text="structure" Name="lb_structure" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_structure" Name="structure" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_remark" Name="remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_enteredby" Visible="false"><Ctrls>
+<Label Align="Right" Text="enteredby" overlap="pre" Name="lb_enteredby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_enteredby" overlap="pre" Name="enteredby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_enter" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_enter" overlap="pre" Name="lb_dt_enter" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_enter" overlap="pre" Name="dt_enter" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_update" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_update" overlap="pre" Name="lb_dt_update" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_update" overlap="pre" Name="dt_update" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_comm" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_comm" overlap="pre" Name="lb_id_comm" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_comm" overlap="pre" Name="id_comm" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_stat" Visible="false"><Ctrls>
+<CheckBox Text="stat" ToolTip="ttp_stat" overlap="pre" Name="stat" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_build" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_build" overlap="pre" Name="lb_id_build" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_build" overlap="pre" Name="id_build" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id_build}'"><SetVisible name="insertproperty_building" Visible="0"/><SetVisible name="modifyproperty_building" Visible="1"/><else/><SetVisible name="insertproperty_building" Visible="1"/><SetVisible name="modifyproperty_building" Visible="0"/></if><if cond="'%{id_build}'"><DbDetails><Where>id_build='%{id_build}'</Where></DbDetails><submit next="property_room_vLst" namelist="DbDetails"/><else/><submit next="property_room_vLst" function="resetcontent"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

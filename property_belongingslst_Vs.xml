@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITproperty_belongingslst" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_id_belongings" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_id_belongings" Size="60,20" Text="id_belongings" Align="Right"  onload="init"/>
+<ComboBox Name="id_belongings" Size="170,100" Text="" Weight="170"  ToolTip="ttp_id_belongings"  onload="init">
+	<DbDetails>
+<Index>id_belongingtp</Index>
+<DbTable>mylayout.property_belongingstp</DbTable>
+<Data>name_belongingtp,id_belongingtp</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_dt" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_dt" Size="60,20" Text="dt" Align="Right"/>
+<DateTime Name="dt" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_dt"></DateTime>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_responsible" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_responsible" Size="60,20" Text="responsible" Align="Right"  onload="init"/>
+<ComboBox Name="responsible" Size="170,100" Text="" Weight="170"  ToolTip="ttp_responsible"  onload="init">
+	<DbDetails>
+<Index>user_code</Index>
+<DbTable>mylayout.userlogin</DbTable>
+<Data>user_name,user_code</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

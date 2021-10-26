@@ -1,0 +1,51 @@
+﻿<GroupBox Name="GBDEDITproperty_complaints" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_id_comm" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_id_comm" Size="60,20" Text="id_comm" Align="Right"  onload="init"/>
+<ComboBox Name="id_comm" Size="170,100" Text="" Weight="170"  ToolTip="ttp_id_comm"  onload="init">
+	<DbDetails>
+<Index>id_comm</Index>
+<DbTable>mylayout.property_community</DbTable>
+<Data>name_comm,id_comm</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails><OnSELENDOK><if cond="%{id_comm[id_comm]}"><submit next="id_build"/><else/><submit next="id_build" function="resetcontent"/><submit next="id_room" function="resetcontent"/></if></OnSELENDOK></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_build" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_id_build" Size="60,20" Text="id_build" Align="Right"/>
+<ComboBox Name="id_build" Size="170,100" Text="" Weight="170"  ToolTip="ttp_id_build">
+	<DbDetails>
+<Index>id_build</Index>
+<DbTable>mylayout.property_building</DbTable>
+<Data>name_build,id_build</Data>
+<Where>id_comm='%{id_comm[id_comm]}'</Where>
+<queryFormat></queryFormat></DbDetails><OnSELENDOK><if cond="%{id_build[id_build]}"><submit next="id_room"/><else/><submit next="id_room" function="resetcontent"/></if></OnSELENDOK></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_room" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_id_room" Size="60,20" Text="id_room" Align="Right"/>
+<ComboBox Name="id_room" Size="170,100" Text="" Weight="170"  ToolTip="ttp_id_room">
+	<DbDetails>
+<Index>id_room</Index>
+<DbTable>mylayout.property_room</DbTable>
+<Data>name_room,owner,ownerphone,id_room</Data>
+<Where>id_comm='%{id_comm[id_comm]}' and id_build='%{id_build[id_build]}'</Where>
+<queryFormat></queryFormat></DbDetails><OnSelEndOk><if cond="!'%{complainer}'"><assign name="complainer" expr="%{id_room[owner]}"/></if><if cond="!'%{phone}'"><assign name="phone" expr="%{id_room[ownerphone]}"/></if></OnSelEndOk></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_complaintp" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_complaintp" Size="60,20" Text="complaintp" Align="Right"  onload="init"/>
+<ComboBox Name="complaintp" Size="170,100" Text="" Weight="170"  ToolTip="ttp_complaintp"  onload="init">
+	<DbDetails>
+<Index>idx</Index>
+<DbTable>mylayout.property_complainttp</DbTable>
+<Data>name,idx</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_complainer" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_complainer" Size="60,20" Text="complainer" Align="Right"/>
+<TextBox Name="complainer" Size="170,20" Text="" Weight="170" ToolTip="ttp_complainer"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_phone" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_phone" Size="60,20" Text="phone" Align="Right"/>
+<TextBox Name="phone" Size="150,20" Text="" Weight="150" ToolTip="ttp_phone"></TextBox>
+<MagicCtrl Name="dialphone" button="type:0" images=" ,data/startcall_green.png" Size="20,20" OnClick="nis3ucs:%{phone}" ToolTip="DialToCall"/>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

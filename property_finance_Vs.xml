@@ -1,0 +1,26 @@
+﻿<GroupBox Name="GBDEDITproperty_finance" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_id_comm" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_id_comm" Size="60,20" Text="id_comm" Align="Right"  onload="init"/>
+<ComboBox Name="id_comm" Size="170,100" Text="" Weight="170"  ToolTip="ttp_id_comm"  onload="init">
+	<DbDetails>
+<Index>id_comm</Index>
+<DbTable>mylayout.property_community</DbTable>
+<Data>name_comm,id_comm</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_tp" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_tp" Size="60,20" Text="tp" Align="Right"  onload="init"/>
+<ComboBox Name="tp" Size="170,100" Text="" Weight="170"  ToolTip="ttp_tp"  onload="init">
+	<DbDetails>
+<Index>idx</Index>
+<DbTable>mylayout.property_financetp</DbTable>
+<Data>name,idx</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_dt" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_dt" Size="60,20" Text="dt" Align="Right"/>
+<DateTime Name="dt" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_dt"></DateTime>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

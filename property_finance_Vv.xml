@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDVproperty_finance" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="property_finance_vLst" ToolTip="ttp_property_finance_v" Size="700,450" OnLoad="init" Heading="id_comm,120;tp,120;dt,150;outin,120;fee,90;remark,150;enteredby,55;dt_enter,150;stat,60;id_finance,55;" loadedclick="0">
+	<DbDetails >
+<Index>id_finance</Index>
+<DbTable>mylayout.property_finance p left join mylayout.property_community p0 on p.id_comm=p0.id_comm left join mylayout.property_financetp p1 on p.tp=p1.idx</DbTable>
+<Data>p0.name_comm id_comm,p1.name tp,p.dt,p.outin,p.fee,p.remark,p.enteredby,p.dt_enter,p.stat,p.id_finance</Data>
+<Order>id_finance</Order></DbDetails>
+<DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>id_finance='%{property_finance_vLst[id_finance]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.property_finance.property_financeLst"/><assign name="$this.property_finance.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_finance</DbTable>
+<Where>id_finance='%{property_finance_vLst[id_finance]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_property_finance" expr="js(%{property_finance_vLst[currentpage]}+1)"/>
+<assign name="pgscb_property_finance" expr="js(%{property_finance_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

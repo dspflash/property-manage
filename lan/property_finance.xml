@@ -1,0 +1,38 @@
+﻿<Language name="property_finance">
+<Lang name="property_finance" value="财务管理"/>
+<Lang name="TabEditproperty_finance" value="property_finance Edit"/>
+<Lang name="TabViewproperty_finance" value="property_finance View"/>
+<Lang name="fee" value="金    额"/>
+<Lang name="ttp_fee" value=""/>
+<Lang name="outin" value="收支方向"/>
+<Lang name="ttp_outin" value=""/>
+<Lang name="tp" value="收支类别"/>
+<Lang name="ttp_tp" value=""/>
+<Lang name="dt" value="开始时间"/>
+<Lang name="ttp_dt" value=""/>
+<Lang name="remark" value=""/>
+<Lang name="ttp_remark" value=""/>
+<Lang name="enteredby" value=""/>
+<Lang name="ttp_enteredby" value=""/>
+<Lang name="dt_enter" value=""/>
+<Lang name="ttp_dt_enter" value=""/>
+<Lang name="stat" value=""/>
+<Lang name="ttp_stat" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationproperty_finance" value=""/>
+<Lang name="ttp_createproperty_finance" value=""/>
+<Lang name="ttp_modifyproperty_finance" value=""/>
+<Lang name="ttp_resetproperty_finance" value=""/>
+<Lang name="ttp_deleteproperty_finance" value=""/>
+<Lang name="ttp_refreshproperty_finance" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

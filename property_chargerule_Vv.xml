@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDVproperty_chargerule" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="property_chargerule_vLst" ToolTip="ttp_property_chargerule_v" Size="700,450" OnLoad="init" Heading="name_rule,100;formula,500;stat,60;id_rule,20;" loadedclick="0">
+	<DbDetails >
+<Index>id_rule</Index>
+<DbTable>mylayout.property_chargerule p</DbTable>
+<Data>p.name_rule,p.formula,p.stat,p.id_rule</Data>
+<Order>id_rule</Order></DbDetails>
+<DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>id_rule='%{property_chargerule_vLst[id_rule]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.property_chargerule.property_chargeruleLst"/><assign name="$this.property_chargerule.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_chargerule</DbTable>
+<Where>id_rule='%{property_chargerule_vLst[id_rule]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_property_chargerule" expr="js(%{property_chargerule_vLst[currentpage]}+1)"/>
+<assign name="pgscb_property_chargerule" expr="js(%{property_chargerule_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,6 @@
+﻿<GroupBox Name="GBDEDITproperty_chargerule" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_name_rule" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_name_rule" Size="60,20" Text="name_rule" Align="Right"/>
+<TextBox Name="name_rule" Size="170,20" Text="" Weight="170" ToolTip="ttp_name_rule"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

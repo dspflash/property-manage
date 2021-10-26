@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproperty_payment" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="property_paymentLst" ToolTip="ttp_property_payment" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id_payment</Index>
+<DbTable>mylayout.property_payment</DbTable>
+<Data>payer_id,payer,phone,prebalance,curbalance,dt_pay,method,tp,code,curaccounts,paidaccounts,yd_skr,enteredby,dt_enter,stat,remark,id_payment</Data>
+<Order>id_payment</Order></DbDetails>
+<OnClick><assign name="payer_id[id_room]" expr="%{property_paymentLst[payer_id]}" function="SetSel"/><assign name="method[idx]" expr="%{property_paymentLst[method]}" function="SetSel"/><assign name="tp[idx]" expr="%{property_paymentLst[tp]}" function="SetSel"/>
+<if cond="%{id_payment}"><SetVisible name="insertproperty_payment" Visible="0"/><SetVisible name="modifyproperty_payment" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

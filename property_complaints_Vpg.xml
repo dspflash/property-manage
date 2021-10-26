@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGproperty_complaints"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_property_complaints" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>id_complaints</Index>
+<DbTable>mylayout.property_complaints p left join mylayout.property_community p0 on p.id_comm=p0.id_comm left join mylayout.property_building p1 on p.id_build=p1.id_build left join mylayout.property_room p2 on p.id_room=p2.id_room left join mylayout.property_complainttp p3 on p.complaintp=p3.idx left join mylayout.statusinfo s on p.stat4dealwith=s.status_id left join mylayout.satisfaction s0 on p.satisfaction=s0.id_satisfaction</DbTable>
+<Data>count(*) records</Data>
+<Order>id_complaints</Order><Queryformat>select %{data} from (select p.id_complaints from %{dbtable} %{where} GROUP BY p.id_complaints  ORDER BY p.id_complaints) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_property_complaints" expr="js(Math.ceil(%{records_property_complaints}/%{property_complaints_vLst[countsperpage]}))"/>
+<assign name="pgscb_property_complaints" expr="js('1~'+Math.ceil(%{records_property_complaints}/%{property_complaints_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_property_complaints" Size="60,20"><OnSelEndOK><submit next="property_complaints_vLst" function="GetPage(%{pgscb_property_complaints}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_property_complaints" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_property_complaints" Size="30,20"/>
+<Button Text="go2Page" Name="go2pageproperty_complaints_vLst" Size="50,20"><OnClick><submit next="property_complaints_vLst" function="GetPage(%{pgcur_property_complaints}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

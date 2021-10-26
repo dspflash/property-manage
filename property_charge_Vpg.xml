@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GBPGproperty_charge"><Ctrls>
+<Label Align="Right" Text="Records" Name="lb_Records" Size="60,20"/>
+<TextBox Weight="30" ToolTip="ttp_records" Name="records_property_charge" Size="30,20" OnLoad="init" readonly="1">
+	<DbDetails fcsm="1">
+<Index>id_charge</Index>
+<DbTable>mylayout.property_charge p left join mylayout.property_chargerule p0 on p.rule=p0.id_rule</DbTable>
+<Data>count(*) records</Data>
+<Order>id_charge</Order><Queryformat>select %{data} from (select p.id_charge from %{dbtable} %{where} GROUP BY p.id_charge  ORDER BY p.id_charge) t</Queryformat></DbDetails>
+<OnEnchange>
+<assign name="pgs_property_charge" expr="js(Math.ceil(%{records_property_charge}/%{property_charge_vLst[countsperpage]}))"/>
+<assign name="pgscb_property_charge" expr="js('1~'+Math.ceil(%{records_property_charge}/%{property_charge_vLst[countsperpage]}))" function="setitems"/>
+</OnEnchange>
+</TextBox>
+<!--ComboBox Weight="60" ToolTip="ttp_pgs" Name="pgscb_property_charge" Size="60,20"><OnSelEndOK><submit next="property_charge_vLst" function="GetPage(%{pgscb_property_charge}-1)"/></OnSelEndOK></ComboBox-->
+<TextBox Weight="30" ToolTip="ttp_pgs" Name="pgs_property_charge" Size="30,20" readonly="1"/>
+<TextBox Weight="30" ToolTip="ttp_pgcur" Name="pgcur_property_charge" Size="30,20"/>
+<Button Text="go2Page" Name="go2pageproperty_charge_vLst" Size="50,20"><OnClick><submit next="property_charge_vLst" function="GetPage(%{pgcur_property_charge}-1)"/></OnClick></Button>
+</Ctrls></GroupBox>

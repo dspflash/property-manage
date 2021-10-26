@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVproperty_chargelst" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialproperty_chargelst" Size="50,20">
+<OnClick><submit next="property_chargelst_vLst" function="initial"/><submit next="records_property_chargelst" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPproperty_chargelst_vLst" Size="50,20">
+<OnClick><submit next="property_chargelst_vLst" function="GetPage(first)"/><submit next="records_property_chargelst"/></OnClick></Button>
+<Button Text="prepage" Name="PREproperty_chargelst_vLst" Size="50,20">
+<OnClick><submit next="property_chargelst_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPproperty_chargelst_vLst" Size="50,20">
+<OnClick><submit next="property_chargelst_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

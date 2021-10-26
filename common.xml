@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><XI3uWnd debug="1">
+	<webconfig theme="../biz/theme/beyond/theme.html"/>
+	<var name="contactdb" expr="property_room"/>
+	<var name="contactnmfield" expr="owner"/>
+	<var name="contactidfield" expr="idx"/>
+	<var name="contactlstctrl" expr="room.gList"/>
+	<EventHandlers>
+		<EventHandler Event="ReceivedCall('%{callerid}')">
+		<assign name="contact.base_mobile" expr="%{callerid}"/>
+		<assign name="contact.TB_callid" expr="%{input}"/>
+		<DbDetails><Where>where base_mobile='%{contact.base_mobile}' or base_phone='%{contact.base_mobile}'</Where></DbDetails><submit next="contact.ContactList" namelist="DbDetails" method="post"/>
+		</EventHandler>
+		<EventHandler Handler="(contact.TB_callid)SetText(%{input});" Event="CallAlerting('%{input}')"/>
+		<EventHandler Event="CallDisconnected()"><assign name="topmost" expr="nis3ucs:USS|b"/>
+		</EventHandler>
+	</EventHandlers>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\general.xml"/>	
+<WndTaps>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_payment_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_finance_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_chargelst_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_repairs_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_complaints_v.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_community_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_belongingslst_Vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_chargetmpl_vm.xml"/>
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_shifts_v.xml"></xi:include>
+	</WndTaps>
+</XI3uWnd>

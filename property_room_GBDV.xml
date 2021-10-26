@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVproperty_room"><Ctrls>
+<ListCtrl Heading="code_room,100;name_room,100;layers,30;roomtp,120;owner,100;ownerphone,100;owneridcard,150;ownerfirm,200;property_no,100;parking_no,100;area_ct,90;area_real,90;isrent,120;dt_rentdue,150;remark,250;fw_lydy,30;deposit,90;enteredby,100;dt_enter,150;dt_update,150;stat,60;id_room,55;" loadedclick="0" ToolTip="ttp_property_room" Name="property_roomLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>id_room</Index>
+<DbTable>mylayout.property_room p left join mylayout.property_roomtp p0 on p.roomtp=p0.idx</DbTable>
+<Data>p.code_room,p.name_room,p.layers,p0.name roomtp,p.owner,p.ownerphone,p.owneridcard,p.ownerfirm,p.property_no,p.parking_no,p.area_ct,p.area_real,p.isrent,p.dt_rentdue,p.remark,p.fw_lydy,p.deposit,p.enteredby,p.dt_enter,p.dt_update,p.stat,p.id_room</Data>
+<Order>id_room</Order></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_room_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

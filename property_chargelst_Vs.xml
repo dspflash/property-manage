@@ -1,0 +1,50 @@
+﻿<GroupBox Name="GBDEDITproperty_chargelst" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_id_comm" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_id_comm" Size="60,20" Text="id_comm" Align="Right"  onload="init"/>
+<ComboBox Name="id_comm" Size="170,100" Text="" Weight="170"  ToolTip="ttp_id_comm"  onload="init">
+	<DbDetails>
+<Index>id_comm</Index>
+<DbTable>mylayout.property_community</DbTable>
+<Data>name_comm,id_comm</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails><OnSELENDOK><if cond="%{id_comm[id_comm]}"><submit next="id_build"/><else/><submit next="id_build" function="resetcontent"/><submit next="id_room" function="resetcontent"/></if></OnSELENDOK></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_build" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_id_build" Size="60,20" Text="id_build" Align="Right"/>
+<ComboBox Name="id_build" Size="170,100" Text="" Weight="170"  ToolTip="ttp_id_build">
+	<DbDetails>
+<Index>id_build</Index>
+<DbTable>mylayout.property_building</DbTable>
+<Data>name_build,id_build</Data>
+<Where>id_comm='%{id_comm[id_comm]}'</Where>
+<queryFormat></queryFormat></DbDetails><OnSELENDOK><if cond="%{id_build[id_build]}"><submit next="id_room"/><else/><submit next="id_room" function="resetcontent"/></if></OnSELENDOK></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_id_room" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_id_room" Size="60,20" Text="id_room" Align="Right"/>
+<ComboBox Name="id_room" Size="170,100" Text="" Weight="170"  ToolTip="ttp_id_room">
+	<DbDetails>
+<Index>id_room</Index>
+<DbTable>mylayout.property_room</DbTable>
+<Data>name_room,id_room</Data>
+<Where>id_comm='%{id_comm[id_comm]}' and id_build='%{id_build[id_build]}'</Where>
+<queryFormat></queryFormat></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox Name="GB_chargetype" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_chargetype" Size="60,20" Text="chargetype" Align="Right"  onload="init"/>
+<ComboBox Name="chargetype" Size="170,100" Text="" Weight="170"  ToolTip="ttp_chargetype"  onload="init">
+	<DbDetails fcsm="true">
+<Index>id_charge</Index>
+<DbTable>mylayout.property_charge</DbTable>
+<Data>name_charge chargename,rule,price,id_charge</Data>
+<Where></Where>
+<queryFormat></queryFormat></DbDetails><OnSelEndOk><assign name="chargerule[id_rule]" expr="%{chargetype[rule]}" function="setsel"/></OnSelEndOk></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_year" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_year" Size="60,20" Text="year" Align="Right"/>
+<ComboBox Name="year" Size="170,100" Text="" Weight="170" Items="2019~2099" ToolTip="ttp_year"></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_month" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_month" Size="60,20" Text="month" Align="Right"/>
+<ComboBox Name="month" Size="170,100" Text="" Weight="170" Items="01~12" ToolTip="ttp_month"></ComboBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

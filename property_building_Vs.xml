@@ -1,0 +1,14 @@
+﻿<GroupBox Name="GBDEDITproperty_building" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_code_build" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_code_build" Size="60,20" Text="code_build" Align="Right"/>
+<TextBox Name="code_build" Size="170,20" Text="" Weight="170" ToolTip="ttp_code_build"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_name_build" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_name_build" Size="60,20" Text="name_build" Align="Right"/>
+<TextBox Name="name_build" Size="170,20" Text="" Weight="170" ToolTip="ttp_name_build"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_dt_const" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_dt_const" Size="60,20" Text="dt_const" Align="Right"/>
+<DateTime Name="dt_const" Format="yyyy-MM-dd" Size="170,20" Text="" Weight="170" Text2="1 day" ToolTip="ttp_dt_const"></DateTime>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

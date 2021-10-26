@@ -1,0 +1,17 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVproperty_belongingslst" Size="100,100"><Ctrls>
+<Button Text="delete" ToolTip="ttp_deleteproperty_belongingslst" Name="deleteproperty_belongingslst" Size="50,20">
+	<OnClick>
+	<DbDetails fcsm="1">
+<DbTable>mylayout.property_belongingslst</DbTable>
+<Where>id_belonginglst='%{property_belongingslstLst[id_belonginglst]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchproperty_belongingslst" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="refresh" ToolTip="ttp_refreshproperty_belongingslst" Name="searchproperty_belongingslst" Size="50,20">
+			  <OnClick><submit next="property_belongingslstLst"/>	</OnClick>
+</Button>
+<TAB/><TAB/><Button Text="firstpage" Name="FPproperty_belongingslstLst" OnClick="(property_belongingslstLst)GetPage(First)" Size="50,20"/>
+<TAB/><Button Text="prepage" Name="PREproperty_belongingslstLst" OnClick="(property_belongingslstLst)GetPage(Pre)" Size="50,20"/>
+<TAB/><Button Text="nextpage" Name="NPproperty_belongingslstLst" OnClick="(property_belongingslstLst)GetPage(Next)" Size="50,20"/>
+</Ctrls></GroupBox>

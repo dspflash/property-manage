@@ -1,0 +1,43 @@
+﻿<GroupBox Name="GBDEDITproperty_belongingstp"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_code_belongingtp"><Ctrls>
+<Label Align="Right" Text="code_belongingtp" Name="lb_code_belongingtp" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_code_belongingtp" Name="code_belongingtp" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_name_belongingtp"><Ctrls>
+<Label Align="Right" Text="name_belongingtp" Name="lb_name_belongingtp" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name_belongingtp" Name="name_belongingtp" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_modsize"><Ctrls>
+<Label Align="Right" Text="modsize" Name="lb_modsize" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_modsize" Name="modsize" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_units"><Ctrls>
+<Label Align="Right" Text="units" onload="init" Name="lb_units" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_units" onload="init" Name="units" Size="170,100">
+	<DbDetails>
+<Index>idx</Index>
+<DbTable>mylayout.units</DbTable>
+<Data>name,idx</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_price"><Ctrls>
+<Label Align="Right" Text="price" Name="lb_price" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_price" Name="price" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_remark" Name="remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_stat" Visible="false"><Ctrls>
+<CheckBox Text="stat" ToolTip="ttp_stat" overlap="pre" Name="stat" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_corp" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_corp" overlap="pre" Name="lb_id_corp" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_corp" overlap="pre" Name="id_corp" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_belongingtp" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_belongingtp" overlap="pre" Name="lb_id_belongingtp" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_belongingtp" overlap="pre" Name="id_belongingtp" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id_belongingtp}'"><SetVisible name="insertproperty_belongingstp" Visible="0"/><SetVisible name="modifyproperty_belongingstp" Visible="1"/><else/><SetVisible name="insertproperty_belongingstp" Visible="1"/><SetVisible name="modifyproperty_belongingstp" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

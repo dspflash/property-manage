@@ -1,0 +1,8 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>id_payment='%{property_payment_vLst[id_payment]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.property_payment.property_paymentLst"/><DbDetails><Where>id_room=(select id_room from mylayout.property_payment where id_payment='%{property_payment_vLst[id_payment]}')</Where></DbDetails><submit namelist="DbDetails" next="$this.property_payment.payer_id"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_payment</DbTable>
+<Where>id_payment='%{property_payment_vLst[id_payment]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

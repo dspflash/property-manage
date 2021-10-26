@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVaddressinfo" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="addressinfoLst" ToolTip="ttp_addressinfo" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>addressinfoid</Index>
+<DbTable>mylayout.addressinfo</DbTable>
+<Data>addressname,addr,county,city,province,nation,contact,telphone,postal_code,address,address_distance,address_position,poi,poi_distance,poi_position,landmark,landmark_distance,landmark_position,road,road_distance,county_code,created_by,creation_date,last_update_by,last_update_date,addressinfoid,addrlng,addrlat,city_code,province_code,active</Data>
+<Order>addressinfoid</Order></DbDetails>
+<OnClick>
+<if cond="%{addressinfoid}"><SetVisible name="insertaddressinfo" Visible="0"/><SetVisible name="modifyaddressinfo" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

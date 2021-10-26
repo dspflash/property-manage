@@ -1,0 +1,53 @@
+﻿<GroupBox Name="GBDEDITproperty_community"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_code_comm"><Ctrls>
+<Label Align="Right" Text="code_comm" Name="lb_code_comm" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_code_comm" Name="code_comm" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_name_comm"><Ctrls>
+<Label Align="Right" Text="name_comm" Name="lb_name_comm" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name_comm" Name="name_comm" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_addr"><Ctrls>
+<Label Align="Right" Text="addr" Name="lb_addr" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_addr" Name="addr" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_numbuilding"><Ctrls>
+<Label Align="Right" Text="numbuilding" Name="lb_numbuilding" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_numbuilding" Name="numbuilding" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_numroom"><Ctrls>
+<Label Align="Right" Text="numroom" Name="lb_numroom" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_numroom" Name="numroom" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_numresident"><Ctrls>
+<Label Align="Right" Text="numresident" Name="lb_numresident" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_numresident" Name="numresident" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_asigned2"><Ctrls>
+<Label Align="Right" Text="asigned2" Name="lb_asigned2" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_asigned2" Name="asigned2" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_enteredby" Visible="false"><Ctrls>
+<Label Align="Right" Text="enteredby" overlap="pre" Name="lb_enteredby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_enteredby" overlap="pre" Name="enteredby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_enter" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_enter" overlap="pre" Name="lb_dt_enter" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_enter" overlap="pre" Name="dt_enter" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_update" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_update" overlap="pre" Name="lb_dt_update" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_update" overlap="pre" Name="dt_update" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_remark"><Ctrls>
+<Label Align="Right" Text="remark" Name="lb_remark" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_remark" Name="remark" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_stat" Visible="false"><Ctrls>
+<CheckBox Text="stat" ToolTip="ttp_stat" overlap="pre" Name="stat" readonly="true" Size="230,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_comm" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_comm" overlap="pre" Name="lb_id_comm" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_comm" overlap="pre" Name="id_comm" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id_comm}'"><SetVisible name="insertproperty_community" Visible="0"/><SetVisible name="modifyproperty_community" Visible="1"/><else/><SetVisible name="insertproperty_community" Visible="1"/><SetVisible name="modifyproperty_community" Visible="0"/></if><if cond="'%{id_comm}'"><DbDetails><Where>id_comm='%{id_comm}'</Where></DbDetails><submit next="property_building_vLst" namelist="DbDetails"/><else/><submit next="property_building_vLst" function="resetcontent"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

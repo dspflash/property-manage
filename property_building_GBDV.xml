@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVproperty_building"><Ctrls>
+<ListCtrl Heading="code_build,100;name_build,150;dt_const,150;layers,30;rooms,30;residents,30;structure,100;remark,250;enteredby,100;dt_enter,150;dt_update,150;id_comm,55;stat,60;id_build,55;" loadedclick="0" ToolTip="ttp_property_building" Name="property_buildingLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>id_build</Index>
+<DbTable>mylayout.property_building</DbTable>
+<Data>code_build,name_build,dt_const,layers,rooms,residents,structure,remark,enteredby,dt_enter,dt_update,id_comm,stat,id_build</Data>
+<Order>id_build</Order></DbDetails><DbDetails><DbTable>mylayout.property_building p left join mylayout.addresses_loc_v a on a.reftbltp='property_building' and p.id_comm=a.refid</DbTable></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_building_ops.xml"/>
+</ListCtrl>
+</Ctrls></GroupBox>

@@ -1,0 +1,32 @@
+<Language name="address_group">
+<Lang name="address_group" value="address_group"/>
+<Lang name="GROUP_ID" value="GROUP_ID"/>
+<Lang name="ttp_GROUP_ID" value=""/>
+<Lang name="GROUP_NAME" value="GROUP_NAME"/>
+<Lang name="ttp_GROUP_NAME" value=""/>
+<Lang name="USER_ID" value="USER_ID"/>
+<Lang name="ttp_USER_ID" value=""/>
+<Lang name="PRIV_DEPT" value="PRIV_DEPT"/>
+<Lang name="ttp_PRIV_DEPT" value=""/>
+<Lang name="PRIV_ROLE" value="PRIV_ROLE"/>
+<Lang name="ttp_PRIV_ROLE" value=""/>
+<Lang name="PRIV_USER" value="PRIV_USER"/>
+<Lang name="ttp_PRIV_USER" value=""/>
+<Lang name="ORDER_NO" value="ORDER_NO"/>
+<Lang name="ttp_ORDER_NO" value=""/>
+<Lang name="SUPPORT_DEPT" value="SUPPORT_DEPT"/>
+<Lang name="ttp_SUPPORT_DEPT" value=""/>
+<Lang name="ttp_operationaddress_group" value="操作"/>
+<Lang name="ttp_createaddress_group" value="新增"/>
+<Lang name="ttp_modifyaddress_group" value="修改"/>
+<Lang name="ttp_deleteaddress_group" value="删除"/>
+<Lang name="ttp_refreshaddress_group" value="刷新"/>
+<Lang name="operation" value="操作"/>
+<Lang name="create" value="新增"/>
+<Lang name="modify" value="修改"/>
+<Lang name="delete" value="删除"/>
+<Lang name="refresh" value="刷新"/>
+<Lang name="firstpage" value="首页"/>
+<Lang name="prepage" value="上页"/>
+<Lang name="nextpage" value="下页"/>
+</Language>

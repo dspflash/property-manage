@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPEaddressinfo" Size="100,100"><Ctrls>
+<Button sqlpkinsert="addressinfoid" Text="create" ToolTip="ttp_createaddressinfo" Name="insertaddressinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="insert" fcsm="1">
+<DbTable>mylayout.addressinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>addressname,addr,county,city,province,nation,contact,telphone,postal_code,reftbltp,refid,address,address_distance,address_position,poi,poi_distance,poi_position,landmark,landmark_distance,landmark_position,road,road_distance,county_code,addrlng,addrlat,city_code,province_code</Data>
+<DataEx>created_by,creation_date,last_update_by,last_update_date;'%{user_id}',now(),'%{user_id}',now()</DataEx>
+<queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}==1"><submit next="addressinfoLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><submit next="$parent.addressinfo_vLst" delay="1000"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyaddressinfo" Name="modifyaddressinfo" Size="50,20">
+	<OnClick>
+	<DbDetails mode="update" fcsm="1">
+<DbTable>mylayout.addressinfo</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>addressname,addr,county,city,province,nation,contact,telphone,postal_code,reftbltp,refid,address,address_distance,address_position,poi,poi_distance,poi_position,landmark,landmark_distance,landmark_position,road,road_distance,county_code,addrlng,addrlat,city_code,province_code</Data>
+<DataEx>last_update_by,last_update_date;'%{user_id}',now()</DataEx>
+<Where>addressinfoid='%{addressinfoid}'</Where>
+<queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><if cond="%{refreshAfterEdit}==1"><submit next="addressinfoLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><submit next="$parent.addressinfo_vLst" delay="1000"/></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetaddressinfo" Name="resetaddressinfo" Size="50,20">
+	<OnClick>
+	<submit next="GBDEDITaddressinfo" function="reset"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="gsearch" ToolTip="ttp_gsearchaddressinfo" Name="gsearchaddressinfo" Size="50,20" visible="false">
+	<OnClick>
+	<search next="addressinfoLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"><zone_id op="(" ref=""/></search><submit next="GBDEDITaddressinfo" namelist="search" function="search"/>
+	</OnClick>
+	</Button><TAB/>
+</Ctrls></GroupBox>

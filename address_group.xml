@@ -1,0 +1,73 @@
+<WndTap Name="address_group" Text="address_group">
+<xi:include href="address_group_lan.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<Ctrls>
+<GroupBox  Name="GBaddress_group" id="address_group" Text="address_group" Size="100,100"><Ctrls>
+<Label Name="lb_GROUP_ID" Size="60,20" Text="GROUP_ID" Align="Right"/>
+<TextBox Name="GROUP_ID" Size="55,20" ToolTip="ttp_GROUP_ID">
+	<OnEnChange></OnEnChange>
+	<onEnterKey></onEnterKey>
+	</TextBox>
+<Label Name="lb_GROUP_NAME" Size="60,20" Text="GROUP_NAME" Align="Right"/>
+<TextBox Name="GROUP_NAME" Size="330,20" ToolTip="ttp_GROUP_NAME">
+	<OnEnChange></OnEnChange>
+	<onEnterKey></onEnterKey>
+	</TextBox>
+<RadioButton Name="USER_ID" Size="60,20" Text="USER_ID" RadioManager="" ToolTip="ttp_USER_ID">
+	<OnChecked></OnChecked>
+	</RadioButton>
+<RadioButton Name="PRIV_DEPT" Size="60,20" Text="PRIV_DEPT" RadioManager="USER_ID" ToolTip="ttp_PRIV_DEPT">
+	<OnChecked></OnChecked>
+	</RadioButton>
+<BR AutoHeight="1"/><Label Name="lb_PRIV_ROLE" Size="60,50" Text="PRIV_ROLE" Align="Right"/>
+<TextBox Name="PRIV_ROLE" Size="640,50" ToolTip="ttp_PRIV_ROLE">
+	<OnEnChange></OnEnChange>
+	<onEnterKey></onEnterKey>
+	</TextBox>
+<BR AutoHeight="1"/><Label Name="lb_PRIV_USER" Size="60,50" Text="PRIV_USER" Align="Right"/>
+<TextBox Name="PRIV_USER" Size="640,50" ToolTip="ttp_PRIV_USER">
+	<OnEnChange></OnEnChange>
+	<onEnterKey></onEnterKey>
+	</TextBox>
+<BR AutoHeight="1"/><Label Name="lb_ORDER_NO" Size="60,20" Text="ORDER_NO" Align="Right"/>
+<TextBox Name="ORDER_NO" Size="55,20" ToolTip="ttp_ORDER_NO">
+	<OnEnChange></OnEnChange>
+	<onEnterKey></onEnterKey>
+	</TextBox>
+<BR AutoHeight="1"/><Label Name="lb_SUPPORT_DEPT" Size="60,50" Text="SUPPORT_DEPT" Align="Right"/>
+<TextBox Name="SUPPORT_DEPT" Size="640,50" ToolTip="ttp_SUPPORT_DEPT">
+	<OnEnChange></OnEnChange>
+	<onEnterKey></onEnterKey>
+	</TextBox>
+<BR AutoHeight="1"/><ListCtrl Name="address_groupLst" ToolTip="ttp_address_group" Size="500,300" PageSize="10" loadedclick="0" Heading="GROUP_ID,55;GROUP_NAME,330;USER_ID,60;PRIV_DEPT,60;PRIV_ROLE,640;PRIV_USER,640;ORDER_NO,55;SUPPORT_DEPT,640;">
+	<DbDetails fcsm="1"><DbTable>address_group</DbTable><Data>*</Data></DbDetails></ListCtrl>
+<GroupBox  Name="GBOPaddress_group" Text="operation" Size="100,100"><Ctrls>
+<Button Name="insertaddress_group" Size="50,20" Text="create" ToolTip="ttp_insertaddress_group">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>address_group</DbTable><Data>GROUP_ID,GROUP_NAME,USER_ID,PRIV_DEPT,PRIV_ROLE,PRIV_USER,ORDER_NO,SUPPORT_DEPT</Data><queryFormat>insert into %{table} %{data}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchaddress_group" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="modifyaddress_group" Size="50,20" Text="modify" ToolTip="ttp_modifyaddress_group">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>address_group</DbTable><Data>GROUP_ID,GROUP_NAME,USER_ID,PRIV_DEPT,PRIV_ROLE,PRIV_USER,ORDER_NO,SUPPORT_DEPT</Data><Where>GROUP_ID='%{address_groupLst[GROUP_ID]}'</Where><queryFormat>update %{table} set %{data} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchaddress_group" function="click"/>
+	</OnClick>
+	</Button><BR/>
+<Button Name="deleteaddress_group" Size="50,20" Text="delete" ToolTip="ttp_deleteaddress_group">
+	<OnClick>
+	<DbDetails fcsm="1"><DbTable>address_group</DbTable><Where>GROUP_ID='%{address_groupLst[GROUP_ID]}'</Where><queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+	<submit namelist="DbDetails"/><submit next="searchaddress_group" function="click"/>
+	</OnClick>
+	</Button><TAB/>
+<Button Name="searchaddress_group" Size="50,20" Text="refresh" ToolTip="ttp_refreshaddress_group">
+	<OnClick><submit next="address_groupLst"/>	</OnClick>
+</Button>
+<BR/><Button Name="FPaddress_groupLst" Size="40,20" Text="firstpage" OnClick="(address_groupLst)GetPage(First)"></Button>
+<Button Name="PREaddress_groupLst" Size="40,20" Text="prepage" OnClick="(address_groupLst)GetPage(Pre)"></Button>
+<Button Name="NPaddress_groupLst" Size="40,20" Text="nextpage" OnClick="(address_groupLst)GetPage(Next)"></Button>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>
+</Ctrls>
+	<OnChanged></OnChanged>
+	<OnActivate></OnActivate>
+	</WndTap>

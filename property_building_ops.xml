@@ -1,0 +1,11 @@
+﻿<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="addone" mustselected="0"><if cond="!%{id_comm}"><alert expr="id_comm is Empty!"/><else/><submit next="$parent.property_building.GBDEDITproperty_building" function="reset"/><assign name="$parent.property_building.id_comm" expr="%{id_comm}"/><assign name="$parent.property_building.frmwndctrl" expr="%{this}"/></if></op>
+<op text="address"><assign name="$parent.addressinfo_V.reftbltp" expr="property_building"/><assign name="$parent.addressinfo_V.refid" expr="%{property_building_vLst[id_build]}"/><submit next="$parent.addressinfo_V.addressinfo_Vlst"/></op>
+<op text="Location"><assign name="$parent.addressinfo_V.address_pick.map" expr="http://localhost/xmappicker?mark=%{property_building_vLst[location]}&zoom=100" function="Navigate"/></op>
+<op text="modify"><DbDetails><Where>id_build='%{property_building_vLst[id_build]}'</Where></DbDetails><submit namelist="DbDetails" next="$parent.property_building.property_buildingLst"/><assign name="$parent.property_building.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_building</DbTable>
+<Where>id_build='%{property_building_vLst[id_build]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>

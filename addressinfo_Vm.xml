@@ -1,0 +1,37 @@
+﻿<WndTap Name="addressinfo_v" Text="addressinfo">
+<WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="addressinfo_Ve.xml" popup="1"/>
+<WndTap Name="address_pick" Text="地址选取" popup="1">
+<var name="mapurl" expr="http://localhost/xmappicker"/>
+<Ctrls>
+	<WebBrowser Name="map" url="%{mapurl}" Studio="0" Size="700,600"><OnBiz><if cond="!'%{map[biz_error]}'">
+	<assign name="$parent.%{frmwndctrl}.addr" expr="%{map[addr]}"/>
+	<assign name="$parent.%{frmwndctrl}.addrlng" expr="%{map[lng]}"/>
+	<assign name="$parent.%{frmwndctrl}.addrlat" expr="%{map[lat]}"/>
+	<assign name="$parent.%{frmwndctrl}.address" expr="%{map[address]}"/>
+	<assign name="$parent.%{frmwndctrl}.address_distance" expr="%{map[address_distance]}"/>
+	<assign name="$parent.%{frmwndctrl}.address_position" expr="%{map[address_position]}"/>
+	<assign name="$parent.%{frmwndctrl}.city" expr="%{map[city]}"/>
+	<assign name="$parent.%{frmwndctrl}.city_code" expr="%{map[city_code]}"/>
+	<assign name="$parent.%{frmwndctrl}.poi" expr="%{map[poi]}"/>
+	<assign name="$parent.%{frmwndctrl}.poi_distance" expr="%{map[poi_distance]}"/>
+	<assign name="$parent.%{frmwndctrl}.poi_position" expr="%{map[poi_position]}"/>
+	<assign name="$parent.%{frmwndctrl}.road" expr="%{map[road]}"/>
+	<assign name="$parent.%{frmwndctrl}.road_distance" expr="%{map[road_distance]}"/>
+	<assign name="$parent.%{frmwndctrl}.county" expr="%{map[county]}"/>
+	<assign name="$parent.%{frmwndctrl}.county_code" expr="%{map[county_code]}"/>
+	<assign name="$parent.%{frmwndctrl}.province" expr="%{map[province]}"/>
+	<assign name="$parent.%{frmwndctrl}.province_code" expr="%{map[province_code]}"/>
+	<assign name="$parent.%{frmwndctrl}.nation" expr="%{map[nation]}"/>
+	<submit function="onok"/><else/><info expr="%{map[biz_error]}"/></if></OnBiz>
+	<!--OnChanged><assign name="map" expr="markAll(%{pts2Mark})" function="runjs"/></OnChanged--></WebBrowser>
+</Ctrls></WndTap>
+</WndTaps>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lan\addressinfo.xml"/>
+<Ctrls><GroupBox  Name="GBaddressinfo" id="addressinfo" Text="addressinfo" Size="100,100"><Ctrls>
+<GroupBox  Name="GBOPVaddressinfo" Size="100,20" cols="xs12 sm12 md12 lg12"><Ctrls>
+<Button Text="addone" ToolTip="ttp_addone" Name="addone" Size="50,20">	<OnClick><submit next="$this.addressinfo.GBDEDITaddressinfo" function="reset"/><assign name="$this.addressinfo.reftbltp" expr="%{reftbltp}"/><assign name="$this.addressinfo.refid" expr="%{refid}"/></OnClick>	</Button><TAB/>	
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="addressinfo_Vv.xml"/>
+</Ctrls></GroupBox>
+</Ctrls></WndTap>

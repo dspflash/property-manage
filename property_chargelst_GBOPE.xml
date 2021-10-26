@@ -1,0 +1,37 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPEproperty_chargelst" Size="100,100"><Ctrls>
+<Button sqlpkinsert="id_chargelst" Text="create" ToolTip="ttp_createproperty_chargelst" Name="insertproperty_chargelst" Size="50,20">
+<OnClick>
+<DbDetails mode="insert" fcsm="1">
+<DbTable>mylayout.property_chargelst</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>id_comm[id_comm],id_build[id_build],id_room[id_room],chargetype[id_charge],price,num,year,month,chargename,chargerule[id_rule],meterlast,metercur,yy_sxid</Data>
+<DataEx>enteredby,stat;'%{user_id}',1</DataEx>
+<queryFormat>insert into %{dbtable} (year,month,chargename,chargetype,chargerule,num,price,amount,id_comm,id_build,id_room,meterlast,metercur) select %{year},%{month},'%{chargename}',%{chargetype[id_charge]},%{chargetype[rule]},tnum,tprice,%{chargerule[formula]},%{id_comm[id_comm]},%{id_build[id_build]},%{id_room[id_room]},tmeterlast,tmetercur from (select %{num} as tnum,%{price} as tprice,'%{meterlast}' tmeterlast,'%{metercur}' tmetercur,area_ct tarea_ct FROM mylayout.property_room WHERE id_room='%{id_room[id_room]}') t</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{insertproperty_chargelst[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_chargelstLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_chargelst_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+	</Button><TAB/>
+<Button Text="modify" ToolTip="ttp_modifyproperty_chargelst" Name="modifyproperty_chargelst" Size="50,20">
+<OnClick>
+<DbDetails mode="update" fcsm="1">
+<DbTable>mylayout.property_chargelst</DbTable>
+<Required>%{dataRequired}</Required>
+<Requireless>%{dataRequireless}</Requireless>
+<Data>id_comm[id_comm],id_build[id_build],id_room[id_room],chargetype[id_charge],price,num,year,month,chargerule[id_rule],yy_sxid</Data>
+<DataEx/>
+<Where>id_chargelst='%{id_chargelst}'</Where>
+<queryFormat>UPDATE mylayout.property_chargelst c JOIN (select %{num} as tnum,%{price} as tprice,'%{meterlast}' tmeterlast,'%{metercur}' tmetercur,area_ct tarea_ct FROM mylayout.property_room WHERE id_room='%{id_room[id_room]}') t set %{data},amount=%{chargerule[formula]} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><if cond="!%{modifyproperty_chargelst[broke]}"><if cond="%{refreshAfterEdit}==1"><submit next="property_chargelstLst" delay="1000"/><elseif cond="%{refreshAfterEdit}==2"/><if cond="'%{frmwndctrl}'"><submit next="%{frmwndctrl}" delay="1000"/><else/><submit next="$parent.property_chargelst_vLst" delay="1000"/></if></if></if>
+	</OnClick>
+</Button><TAB/>
+<Button Text="reset" ToolTip="ttp_resetproperty_chargelst" Name="resetproperty_chargelst" Size="50,20">
+<OnClick>
+<submit next="GBDEDITproperty_chargelst" function="reset"/>
+	</OnClick>
+</Button><TAB/>
+<Button Text="Search" ToolTip="ttp_gsearchproperty_chargelst" Name="gsearchproperty_chargelst" Size="50,20" visible="false">
+<OnClick>
+<search next="property_chargelstLst" listed="0" prefixwhere="0" prefixand="0" inputed="1"/><submit next="GBDEDITproperty_chargelst" namelist="search" function="search"/>
+	</OnClick>
+</Button><TAB/>
+</Ctrls></GroupBox>

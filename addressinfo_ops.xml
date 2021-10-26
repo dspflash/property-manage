@@ -1,0 +1,4 @@
+﻿<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="addone" mustselected="0"><submit next="$this.addressinfo.GBDEDITaddressinfo" function="reset"/><assign name="$this.addressinfo.reftbltp" expr="%{reftbltp}"/><assign name="$this.addressinfo.refid" expr="%{refid}"/></op>
+<op text="modify"><assign name="$this.addressinfo.reftbltp" expr="%{reftbltp}"/><assign name="$this.addressinfo.refid" expr="%{refid}"/><assign name="$parent.addressinfo_V.addressinfo.addressinfoid" expr="%{addressinfolst[addressinfoid]}"/><DbDetails><Where>addressinfoid='%{addressinfo_vLst[addressinfoid]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.addressinfo.addressinfoLst"/></op>
+</operator>

@@ -1,0 +1,46 @@
+﻿<Language name="property_community">
+<Lang name="property_community" value="物业小区"/>
+<Lang name="TabEditproperty_community" value="property_community Edit"/>
+<Lang name="TabViewproperty_community" value="property_community View"/>
+<Lang name="name_comm" value="小区名称"/>
+<Lang name="ttp_name_comm" value=""/>
+<Lang name="addr" value="小区地址"/>
+<Lang name="ttp_addr" value=""/>
+<Lang name="remark" value=""/>
+<Lang name="ttp_remark" value=""/>
+<Lang name="code_comm" value="小区编号"/>
+<Lang name="ttp_code_comm" value=""/>
+<Lang name="numbuilding" value="楼宇数量"/>
+<Lang name="ttp_numbuilding" value=""/>
+<Lang name="numroom" value="房屋数量"/>
+<Lang name="ttp_numroom" value=""/>
+<Lang name="numresident" value="居民数量"/>
+<Lang name="ttp_numresident" value=""/>
+<Lang name="asigned2" value=""/>
+<Lang name="ttp_asigned2" value=""/>
+<Lang name="enteredby" value=""/>
+<Lang name="ttp_enteredby" value=""/>
+<Lang name="dt_enter" value=""/>
+<Lang name="ttp_dt_enter" value=""/>
+<Lang name="dt_update" value=""/>
+<Lang name="ttp_dt_update" value=""/>
+<Lang name="stat" value=""/>
+<Lang name="ttp_stat" value=""/>
+<Lang name="idx" value=""/>
+<Lang name="ttp_idx" value=""/>
+<Lang name="ttp_operationproperty_community" value=""/>
+<Lang name="ttp_createproperty_community" value=""/>
+<Lang name="ttp_modifyproperty_community" value=""/>
+<Lang name="ttp_resetproperty_community" value=""/>
+<Lang name="ttp_deleteproperty_community" value=""/>
+<Lang name="ttp_refreshproperty_community" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

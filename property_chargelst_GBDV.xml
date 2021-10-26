@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVproperty_chargelst"><Ctrls>
+<ListCtrl Heading="id_comm,120;id_build,120;id_room,120;chargetype,120;price,90;num,90;year,120;month,120;chargename,100;chargerule,120;meterlast,90;metercur,90;amount,90;dt_pay,150;id_payment,55;id_accountant,55;yy_sxid,55;enteredby,55;stat,60;id_chargelst,55;" loadedclick="0" ToolTip="ttp_property_chargelst" Name="property_chargelstLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>id_chargelst</Index>
+<DbTable>mylayout.property_chargelst p left join mylayout.property_community p0 on p.id_comm=p0.id_comm left join mylayout.property_building p1 on p.id_build=p1.id_build left join mylayout.property_room p2 on p.id_room=p2.id_room left join mylayout.property_charge p3 on p.chargetype=p3.id_charge left join mylayout.property_chargerule p4 on p.chargerule=p4.id_rule</DbTable>
+<Data>p0.name_comm id_comm,p1.name_build id_build,p2.name_room id_room,name_charge chargename,p.price,p.num,p.year,p.month,p.chargename,p4.name_rule chargerule,p.meterlast,p.metercur,p.amount,p.dt_pay,p.id_payment,p.id_accountant,p.yy_sxid,p.enteredby,p.stat,p.id_chargelst</Data>
+<Order>id_chargelst</Order></DbDetails>
+<DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails><DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>id_chargelst='%{property_chargelst_vLst[id_chargelst]}'</Where></DbDetails><submit next="$this.property_chargelst.property_chargelstLst" namelist="DbDetails"/><assign name="$this.property_chargelst.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_chargelst</DbTable>
+<Where>id_chargelst='%{property_chargelst_vLst[id_chargelst]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

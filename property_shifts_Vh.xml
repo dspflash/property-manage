@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproperty_shifts" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="property_shiftsLst" ToolTip="ttp_property_shifts" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id_shifts</Index>
+<DbTable>mylayout.property_shifts</DbTable>
+<Data>shiftitem,staffs,id_comm,dt,shiftype,remark,stat,enteredby,dt_enter,id_shifts</Data>
+<Order>id_shifts</Order></DbDetails>
+<OnClick><assign name="id_comm[id_comm]" expr="%{property_shiftsLst[id_comm]}" function="SetSel"/>
+<if cond="%{id_shifts}"><SetVisible name="insertproperty_shifts" Visible="0"/><SetVisible name="modifyproperty_shifts" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

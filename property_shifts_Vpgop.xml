@@ -1,0 +1,10 @@
+﻿<GroupBox cols="xs12 sm6 md4" Name="GBOPVproperty_shifts" Size="100,10"><Ctrls>
+<TAB/><Button Text="initial" ToolTip="ttp_initial" Name="initialproperty_shifts" Size="50,20">
+<OnClick><submit next="property_shifts_vLst" function="initial"/><submit next="records_property_shifts" function="initial"/></OnClick></Button>
+<TAB/><Button Text="firstpage" Name="FPproperty_shifts_vLst" Size="50,20">
+<OnClick><submit next="property_shifts_vLst" function="GetPage(first)"/><submit next="records_property_shifts"/></OnClick></Button>
+<Button Text="prepage" Name="PREproperty_shifts_vLst" Size="50,20">
+<OnClick><submit next="property_shifts_vLst" function="GetPage(Pre)"/></OnClick></Button>
+<Button Text="nextpage" Name="NPproperty_shifts_vLst" Size="50,20">
+<OnClick><submit next="property_shifts_vLst" function="GetPage(Next)"/></OnClick></Button>
+</Ctrls></GroupBox>

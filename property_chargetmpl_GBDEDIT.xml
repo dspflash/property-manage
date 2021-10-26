@@ -1,0 +1,102 @@
+﻿<GroupBox Name="GBDEDITproperty_chargetmpl"><Ctrls>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_id_comm"><Ctrls>
+<Label Align="Right" Text="id_comm" onload="init" Name="lb_id_comm" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_id_comm" onload="init" Name="id_comm" Size="170,100">
+	<DbDetails>
+<Index>id_comm</Index>
+<DbTable>mylayout.property_community</DbTable>
+<Data>name_comm,id_comm</Data>
+<Where/>
+<queryFormat/></DbDetails><OnSELENDOK><if cond="%{id_comm[id_comm]}"><submit next="id_build"/><else/><submit next="id_build" function="resetcontent"/><submit next="id_room" function="resetcontent"/></if></OnSELENDOK></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_id_build"><Ctrls>
+<Label Align="Right" Text="id_build" Name="lb_id_build" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_id_build" Name="id_build" Size="170,100">
+	<DbDetails>
+<Index>id_build</Index>
+<DbTable>mylayout.property_building</DbTable>
+<Data>name_build,id_build</Data>
+<Where>id_comm='%{id_comm[id_comm]}'</Where>
+<queryFormat/></DbDetails><OnSELENDOK><if cond="%{id_build[id_build]}"><submit next="id_room"/><else/><submit next="id_room" function="resetcontent"/></if></OnSELENDOK></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_id_room"><Ctrls>
+<Label Align="Right" Text="id_room" Name="lb_id_room" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_id_room" Name="id_room" Size="170,100">
+	<DbDetails>
+<Index>id_room</Index>
+<DbTable>mylayout.property_room</DbTable>
+<Data>name_room,id_room</Data>
+<Where>id_comm='%{id_comm[id_comm]}' and id_build='%{id_build[id_build]}'</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_chargetype"><Ctrls>
+<Label Align="Right" Text="chargetype" onload="init" Name="lb_chargetype" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_chargetype" onload="init" Name="chargetype" Size="170,100">
+	<DbDetails>
+<Index>id_charge</Index>
+<DbTable>mylayout.property_charge</DbTable>
+<Data>name_charge,rule,price,id_charge </Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_price"><Ctrls>
+<Label Align="Right" Text="price" Name="lb_price" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_price" Name="price" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_num"><Ctrls>
+<Label Align="Right" Text="num" Name="lb_num" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_num" Name="num" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_year"><Ctrls>
+<Label Align="Right" Text="year" Name="lb_year" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_year" Items="2000~2099" Name="year" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_month"><Ctrls>
+<Label Align="Right" Text="month" Name="lb_month" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_month" Items="01~12" Name="month" Size="170,100"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_chargerule"><Ctrls>
+<Label Align="Right" Text="chargerule" onload="init" Name="lb_chargerule" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_chargerule" onload="init" Name="chargerule" Size="170,100">
+	<DbDetails>
+<Index>id_rule</Index>
+<DbTable>mylayout.property_chargerule</DbTable>
+<Data>name_rule,formula rule,id_rule</Data>
+<Where/>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_meterlast"><Ctrls>
+<Label Align="Right" Text="meterlast" Name="lb_meterlast" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_meterlast" Name="meterlast" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_metercur"><Ctrls>
+<Label Align="Right" Text="metercur" Name="lb_metercur" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_metercur" Name="metercur" Size="170,20"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_name"><Ctrls>
+<Label Align="Right" Text="name" Name="lb_name" Size="60,20"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_name" Name="name" Size="170,20"/>
+</Ctrls></GroupBox>
+<BR AutoHeight="1"/><GroupBox cols="xs12 sm6 md4" Multiline="0" Name="GB_period"><Ctrls>
+<Label Align="Right" Text="period" onload="init" Name="lb_period" Size="60,20"/>
+<ComboBox Weight="170" Text="" ToolTip="ttp_period" onload="init" Name="period" Size="170,100">
+	<DbDetails>
+<Index>idx</Index>
+<DbTable>mylayout.period</DbTable>
+<Data>namecn,idx</Data>
+<Where>idx&gt;5</Where>
+<queryFormat/></DbDetails></ComboBox>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_dt_modify" Visible="false"><Ctrls>
+<Label Align="Right" Text="dt_modify" overlap="pre" Name="lb_dt_modify" readonly="true" Size="60,20" Visible="false"/>
+<DateTime Weight="170" Text="" ToolTip="ttp_dt_modify" overlap="pre" Name="dt_modify" readonly="true" Size="170,20" Visible="false" Format="yyyy-MM-dd HH:mm:ss"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_modifiedby" Visible="false"><Ctrls>
+<Label Align="Right" Text="modifiedby" overlap="pre" Name="lb_modifiedby" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_modifiedby" overlap="pre" Name="modifiedby" readonly="true" Size="170,20" Visible="false"/>
+</Ctrls></GroupBox>
+<GroupBox cols="xs12 sm6 md4" Multiline="0" overlap="pre" Name="GB_id_chargetmpl" Visible="false"><Ctrls>
+<Label Align="Right" Text="id_chargetmpl" overlap="pre" Name="lb_id_chargetmpl" readonly="true" Size="60,20" Visible="false"/>
+<TextBox Weight="170" Text="" ToolTip="ttp_id_chargetmpl" overlap="pre" Name="id_chargetmpl" readonly="true" Size="170,20" Visible="false"><OnEnChange><if cond="'%{id_chargetmpl}'"><SetVisible name="insertproperty_chargetmpl" Visible="0"/><SetVisible name="modifyproperty_chargetmpl" Visible="1"/><else/><SetVisible name="insertproperty_chargetmpl" Visible="1"/><SetVisible name="modifyproperty_chargetmpl" Visible="0"/></if></OnEnChange></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

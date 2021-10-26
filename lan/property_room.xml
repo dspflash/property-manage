@@ -1,0 +1,68 @@
+﻿<Language name="property_room">
+<Lang name="property_room" value="房屋"/>
+<Lang name="TabEditproperty_room" value="property_room Edit"/>
+<Lang name="TabViewproperty_room" value="property_room View"/>
+<Lang name="name_room" value="房    号"/>
+<Lang name="ttp_name_room" value=""/>
+<Lang name="layers" value="楼层"/>
+<Lang name="ttp_layers" value=""/>
+<Lang name="roomtp" value="户型"/>
+<Lang name="ttp_roomtp" value=""/>
+<Lang name="owner" value="业主名字"/>
+<Lang name="ttp_owner" value=""/>
+<Lang name="ownerphone" value="联系电话"/>
+<Lang name="ttp_ownerphone" value=""/>
+<Lang name="owneridcard" value="身份证号"/>
+<Lang name="ttp_owneridcard" value=""/>
+<Lang name="ownerfirm" value="工作单位"/>
+<Lang name="ttp_ownerfirm" value=""/>
+<Lang name="property_no" value="产权证号"/>
+<Lang name="ttp_property_no" value=""/>
+<Lang name="parking_no" value="车位号码"/>
+<Lang name="ttp_parking_no" value=""/>
+<Lang name="area_ct" value="房屋面积"/>
+<Lang name="ttp_area_ct" value="area construct"/>
+<Lang name="area_real" value="使用面积"/>
+<Lang name="ttp_area_real" value=""/>
+<Lang name="isrent" value="是否出租"/>
+<Lang name="ttp_isrent" value=""/>
+<Lang name="dt_rentdue" value="租约到期"/>
+<Lang name="ttp_dt_rentdue" value=""/>
+<Lang name="remark" value=""/>
+<Lang name="ttp_remark" value=""/>
+<Lang name="code_room" value=""/>
+<Lang name="ttp_code_room" value=""/>
+<Lang name="fw_lydy" value=""/>
+<Lang name="ttp_fw_lydy" value=""/>
+<Lang name="deposit" value=""/>
+<Lang name="ttp_deposit" value=""/>
+<Lang name="enteredby" value=""/>
+<Lang name="ttp_enteredby" value=""/>
+<Lang name="dt_enter" value=""/>
+<Lang name="ttp_dt_enter" value=""/>
+<Lang name="dt_update" value=""/>
+<Lang name="ttp_dt_update" value=""/>
+<Lang name="id_comm" value=""/>
+<Lang name="ttp_id_comm" value=""/>
+<Lang name="id_build" value=""/>
+<Lang name="ttp_id_build" value=""/>
+<Lang name="stat" value=""/>
+<Lang name="ttp_stat" value=""/>
+<Lang name="id_room" value=""/>
+<Lang name="ttp_id_room" value=""/>
+<Lang name="ttp_operationproperty_room" value=""/>
+<Lang name="ttp_createproperty_room" value=""/>
+<Lang name="ttp_modifyproperty_room" value=""/>
+<Lang name="ttp_resetproperty_room" value=""/>
+<Lang name="ttp_deleteproperty_room" value=""/>
+<Lang name="ttp_refreshproperty_room" value=""/>
+<Lang name="operation" value=""/>
+<Lang name="create" value=""/>
+<Lang name="modify" value=""/>
+<Lang name="reset" value=""/>
+<Lang name="delete" value=""/>
+<Lang name="refresh" value=""/>
+<Lang name="firstpage" value=""/>
+<Lang name="prepage" value=""/>
+<Lang name="nextpage" value=""/>
+</Language>

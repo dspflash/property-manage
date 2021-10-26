@@ -1,0 +1,18 @@
+﻿<GroupBox cols="xs12 sm12 md12 lg12" Name="GBDVproperty_charge"><Ctrls>
+<ListCtrl Heading="code_charge,100;name_charge,100;rule,120;ruleinfo,100;price,90;periodinfo,120;remark,250;period,20;dt_update,150;id_corp,55;id_charge,55;" loadedclick="0" ToolTip="ttp_property_charge" Name="property_chargeLst" Size="700,450">
+	<DbDetails fcsm="1">
+<Index>id_charge</Index>
+<DbTable>mylayout.property_charge p left join mylayout.property_chargerule p0 on p.rule=p0.id_rule</DbTable>
+<Data>p.code_charge,p.name_charge,name_rule ruleinfo,p.ruleinfo,p.price,p.periodinfo,p.remark,p.period,p.dt_update,p.id_corp,p.id_charge</Data>
+<Order>id_charge</Order></DbDetails>
+<DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails><DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator firstpage="1" nextpage="1" refresh="1" prepage="1">
+<op text="modify"><DbDetails><Where>id_charge='%{property_charge_vLst[id_charge]}'</Where></DbDetails><submit next="$this.property_charge.property_chargeLst" namelist="DbDetails"/><assign name="$this.property_charge.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_charge</DbTable>
+<Where>id_charge='%{property_charge_vLst[id_charge]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+</ListCtrl>
+</Ctrls></GroupBox>

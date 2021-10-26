@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproperty_belongingstp" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="property_belongingstpLst" ToolTip="ttp_property_belongingstp" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id_belongingtp</Index>
+<DbTable>mylayout.property_belongingstp</DbTable>
+<Data>code_belongingtp,name_belongingtp,modsize,units,price,remark,stat,id_corp,id_belongingtp</Data>
+<Order>id_belongingtp</Order></DbDetails>
+<OnClick><assign name="units[idx]" expr="%{property_belongingstpLst[units]}" function="SetSel"/>
+<if cond="%{id_belongingtp}"><SetVisible name="insertproperty_belongingstp" Visible="0"/><SetVisible name="modifyproperty_belongingstp" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

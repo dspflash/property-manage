@@ -1,0 +1,21 @@
+﻿<GroupBox Name="GBDVproperty_complaints" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="property_complaints_vLst" ToolTip="ttp_property_complaints_v" Size="700,450" OnLoad="init" Heading="id_comm,120;id_build,120;id_room,120;complaintp,120;stat4dealwith,120;complainer,100;phone,100;remark,200;dealwithinfo,200;dt_interview,150;interviewer,100;interviewinfo,250;acceptance,100;satisfaction,120;interviewby,55;dt_complaint,150;dt_dealwith,150;staff2dealwith,120;id_complaints,55;" loadedclick="0">
+	<DbDetails >
+<Index>id_complaints</Index>
+<DbTable>mylayout.property_complaints p left join mylayout.property_community p0 on p.id_comm=p0.id_comm left join mylayout.property_building p1 on p.id_build=p1.id_build left join mylayout.property_room p2 on p.id_room=p2.id_room left join mylayout.property_complainttp p3 on p.complaintp=p3.idx left join mylayout.statusinfo s on p.stat4dealwith=s.status_id left join mylayout.satisfaction s0 on p.satisfaction=s0.id_satisfaction</DbTable>
+<Data>p0.name_comm id_comm,p1.name_build id_build,p2.name_room id_room,p3.name complaintp,s.description stat4dealwith,p.complainer,p.phone,p.remark,p.dealwithinfo,p.dt_interview,p.interviewer,p.interviewinfo,p.acceptance,s0.satisfaction satisfaction,p.interviewby,p.dt_complaint,p.dt_dealwith,p.staff2dealwith,p.id_complaints</Data>
+<Order>id_complaints</Order></DbDetails>
+<DbDetails><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<operator refresh="1" firstpage="1" prepage="1" nextpage="1">
+<op text="modify"><DbDetails><Where>id_complaints='%{property_complaints_vLst[id_complaints]}'</Where></DbDetails><submit namelist="DbDetails" next="$this.property_complaints.property_complaintsLst"/><assign name="$this.property_complaints.frmwndctrl" expr="%{this}"/></op>
+<op text="delete" needconfirm="1"><DbDetails>
+<DbTable>mylayout.property_complaints</DbTable>
+<Where>id_complaints='%{property_complaints_vLst[id_complaints]}'</Where>
+<queryFormat>delete from %{table} where %{where}</queryFormat></DbDetails>
+<submit namelist="DbDetails"/><submit/></op>
+</operator>
+<OnChanged>
+<assign name="pgcur_property_complaints" expr="js(%{property_complaints_vLst[currentpage]}+1)"/>
+<assign name="pgscb_property_complaints" expr="js(%{property_complaints_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>

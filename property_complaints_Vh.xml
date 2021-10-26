@@ -1,0 +1,12 @@
+﻿<GroupBox Name="GBDVproperty_complaints" cols="xs12 sm12 md12 lg12" visible="0"><Ctrls>
+<ListCtrl Name="property_complaintsLst" ToolTip="ttp_property_complaints" Size="70,20" visible="0" loadedclick="1">
+	<DbDetails fcsm="1">
+<Index>id_complaints</Index>
+<DbTable>mylayout.property_complaints</DbTable>
+<Data>id_comm,id_build,id_room,complaintp,stat4dealwith,complainer,phone,remark,dealwithinfo,dt_interview,interviewer,interviewinfo,acceptance,satisfaction,interviewby,dt_complaint,dt_dealwith,staff2dealwith,id_complaints</Data>
+<Order>id_complaints</Order></DbDetails>
+<OnClick><assign name="id_comm[id_comm]" expr="%{property_complaintsLst[id_comm]}" function="SetSel"/><assign name="id_build[id_build]" expr="%{property_complaintsLst[id_build]}" function="SetSel"/><assign name="id_room[id_room]" expr="%{property_complaintsLst[id_room]}" function="SetSel"/><assign name="complaintp[idx]" expr="%{property_complaintsLst[complaintp]}" function="SetSel"/><assign name="stat4dealwith[status_id]" expr="%{property_complaintsLst[stat4dealwith]}" function="SetSel"/><assign name="satisfaction[id_satisfaction]" expr="%{property_complaintsLst[satisfaction]}" function="SetSel"/>
+<if cond="%{id_complaints}"><SetVisible name="insertproperty_complaints" Visible="0"/><SetVisible name="modifyproperty_complaints" Visible="1"/></if>
+</OnClick>
+</ListCtrl>
+</Ctrls></GroupBox>

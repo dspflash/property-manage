@@ -1,0 +1,10 @@
+﻿<GroupBox Name="GBDEDITproperty_belongingstp" text="Search" toggle="1"><Ctrls>
+<GroupBox Name="GB_code_belongingtp" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_code_belongingtp" Size="60,20" Text="code_belongingtp" Align="Right"/>
+<TextBox Name="code_belongingtp" Size="170,20" Text="" Weight="170" ToolTip="ttp_code_belongingtp"></TextBox>
+</Ctrls></GroupBox>
+<GroupBox Name="GB_name_belongingtp" Multiline="0" cols="xs12 sm6 md4"><Ctrls>
+<Label Name="lb_name_belongingtp" Size="60,20" Text="name_belongingtp" Align="Right"/>
+<TextBox Name="name_belongingtp" Size="170,20" Text="" Weight="170" ToolTip="ttp_name_belongingtp"></TextBox>
+</Ctrls></GroupBox>
+</Ctrls></GroupBox>

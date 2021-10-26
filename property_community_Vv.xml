@@ -1,0 +1,14 @@
+﻿<GroupBox Name="GBDVproperty_community" cols="xs12 sm12 md12 lg12"><Ctrls>
+<ListCtrl Name="property_community_vLst" ToolTip="ttp_property_community_v" Size="700,450" OnLoad="init" Heading="code_comm,100;name_comm,150;addr,250;numbuilding,30;numroom,30;numresident,30;asigned2,100;enteredby,100;dt_enter,150;dt_update,150;remark,250;stat,60;id_comm,55;" loadedclick="0">
+	<DbDetails >
+<Index>id_comm</Index>
+<DbTable>mylayout.property_community p</DbTable>
+<Data>p.code_comm,p.name_comm,p.addr,p.numbuilding,p.numroom,p.numresident,p.asigned2,p.enteredby,p.dt_enter,p.dt_update,p.remark,p.stat,p.id_comm,location</Data>
+<Order>id_comm</Order></DbDetails>
+<DbDetails><DbTable>mylayout.property_community p left join mylayout.addresses_loc_v a on a.reftbltp='property_community' and p.id_comm=a.refid</DbTable><queryFormat xml:base="d:\Program Files (x86)\3UCS\3UCS Server\layout\biztools\mysqlcfg.xml" id="tbpages">select %{data} from %{dbtable} %{where} limit %{StartRow},%{PgSize}</queryFormat></DbDetails>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="property_community_ops.xml"/>
+<OnChanged>
+<assign name="pgcur_property_community" expr="js(%{property_community_vLst[currentpage]}+1)"/>
+<assign name="pgscb_property_community" expr="js(%{property_community_vLst[currentpage]}+1)" function="SetSel"/>
+</OnChanged></ListCtrl>
+</Ctrls></GroupBox>
