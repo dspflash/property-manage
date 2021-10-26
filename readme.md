@@ -1,37 +1,12 @@
-## Property 物业管理系统 (http://3ucs.com)
-源代码文件太多(90%以上的代码都是使用3UCS BizTool 自动化工具生成，给个性化定制节省了大量的时间，带来了极大的便利，参见http://3ucs.com/x)，而安装包带有完整源代码，安装完成后源代码在安装目录下（xms文件夹，直接下载release的exe安装包，简单方便）。
+## Property Manage物业管理系统 (http://3ucs.com)
+源代码文件太多(90%以上的代码都是使用3UCS BizTool 自动化工具生成，给个性化定制节省了大量的时间，带来了极大的便利，参见http://3ucs.com/x)，而安装包带有完整源代码，安装完成后源代码在安装目录下（property文件夹，直接下载release的exe安装包，简单方便）。
 
-升级时可将新的代码直接覆盖xms文件夹的代码
+升级时可将新的代码直接覆盖property文件夹的代码
 
 现在您可以使用xone客户端了，超轻量级云应用客户端，高颜值高效灵活稳定(http://3ucs.com/dl56.html)
 
 ## 简介
-XMS是开源的C/S、B/S双架构物流管理系统，。
-三优物流是什么？
-
-三优物流是以AI人工智能为核心的新一代物流云服务平台。
-
-以“货物”为中心
-
-以“流通”为主线
-
-无缝衔接“货物”的生产、仓储、销售、运输、配送等环节
-
-紧密连接生产者、物流商、用户
-
-让供需更顺畅
-
-让流通更透明
-
-……
- 
-AI人工智能配载
-
-AI人工智能排线
-
-AI人工智能配送
-
-AI人工智能语音交互
+Property Manage是开源的C/S、B/S双架构物业管理系统，。
  
 ## 特性
 - C/S、B/S双架构，完美运行于手机客户端、电脑客户端和主流浏览器
@@ -43,14 +18,14 @@ AI人工智能语音交互
 - 3UCS xPlus(http://3ucs.com/x/)
 - MySQL
 
-## 演示地址及截图：http://56.3ucs.com
+## 演示地址及截图：http://3ucs.com
 网页登录例图
 
-![](https://dspflash.github.io/res/xms/web0.png)
+![](https://dspflash.github.io/res/property/webfinance.png)
 
 3UCS XOne客户端登录例图
 
-![](https://dspflash.github.io/res/vtiger/crmgifXOne.gif)
+![](https://dspflash.github.io/res/property/xonefinance.png)
 
 3UCS NISU客户端登录例图
 
